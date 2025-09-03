@@ -102,11 +102,11 @@ class _ResumetabState extends State<Resumetab> {
             'Statemanagement',
             ' Provider',
             ' Bloc_cubit',
-            ' Riverpod',
+            ' ',
           ),
 
           SizedBox(height: 15),
-          defaultitemskills(context, 'APIs', ' REST', ' GraphQL', ' SOAP'),
+          defaultitemskills(context, 'APIs', ' RESTful', ' ', ' '),
 
           SizedBox(height: 15),
           defaultitemskills(
@@ -114,7 +114,7 @@ class _ResumetabState extends State<Resumetab> {
             'Local storage',
             ' Hive ',
             ' Shared preferences',
-            ' Get_storage',
+            ' ',
           ),
 
           SizedBox(height: 15),
