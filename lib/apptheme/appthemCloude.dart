@@ -137,7 +137,7 @@ class PortfolioDecorations {
     borderRadius: BorderRadius.circular(12),
     boxShadow: [
       BoxShadow(
-        color: PortfolioColors.golden.withOpacity(0.3),
+        color: PortfolioColors.golden,
         blurRadius: 8,
         offset: const Offset(0, 4),
       ),
