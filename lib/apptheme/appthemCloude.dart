@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
 
-// ========================================
-// Flutter Colors - Husam Portfolio Theme
-// ========================================
-
 class PortfolioColors {
-  // منع إنشاء instance من الكلاس
-
-  // الألوان الأساسية
   static const Color darkPrimary = Color(0xFF1A1A1A);
   static const Color darkSecondary = Color(0xFF2D2D2D);
   static const Color cardDark = Color(0xFF374151);
   static const Color cardDarker = Color(0xFF4B5563);
 
-  // ألوان النصوص
   static const Color white = Color(0xFFFFFFFF);
   static const Color golden = Color(0xFFFBBF24);
   static const Color goldenAlt = Color(0xFFF59E0B);
@@ -21,24 +13,17 @@ class PortfolioColors {
   static const Color grayLighter = Color(0xFFD1D5DB);
   static const Color grayMedium = Color(0xFF6B7280);
 
-  // ألوان إضافية
   static const Color blueLink = Color(0xFF3B82F6);
   static const Color greenActive = Color(0xFF10B981);
   static const Color backgroundLight = Color(0xFFF3F4F6);
 
-  // ========================================
-  // Portfolio Theme
-  // ========================================
-
   static ThemeData get darkTheme {
     return ThemeData(
-      // الألوان العامة
       brightness: Brightness.dark,
       primaryColor: PortfolioColors.golden,
       scaffoldBackgroundColor: PortfolioColors.darkPrimary,
       cardColor: PortfolioColors.cardDark,
 
-      // ColorScheme
       colorScheme: const ColorScheme.dark(
         primary: PortfolioColors.golden,
         secondary: PortfolioColors.goldenAlt,
@@ -50,7 +35,6 @@ class PortfolioColors {
         onBackground: PortfolioColors.white,
       ),
 
-      // AppBar Theme
       appBarTheme: const AppBarTheme(
         backgroundColor: PortfolioColors.darkSecondary,
         foregroundColor: PortfolioColors.white,
@@ -59,14 +43,6 @@ class PortfolioColors {
         iconTheme: IconThemeData(color: PortfolioColors.golden),
       ),
 
-      // Card Theme
-      cardTheme: CardTheme(
-        color: PortfolioColors.cardDark,
-        elevation: 4,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      ),
-
-      // ElevatedButton Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: PortfolioColors.golden,
@@ -76,12 +52,10 @@ class PortfolioColors {
         ),
       ),
 
-      // TextButton Theme
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(foregroundColor: PortfolioColors.golden),
       ),
 
-      // Input Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: PortfolioColors.cardDark,
@@ -98,12 +72,7 @@ class PortfolioColors {
   }
 }
 
-// ========================================
-// Text Styles
-// ========================================
-
 class PortfolioTextStyles {
-  // العناوين
   static const TextStyle heading1 = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,
@@ -122,7 +91,6 @@ class PortfolioTextStyles {
     color: PortfolioColors.white,
   );
 
-  // النصوص العادية
   static const TextStyle bodyLarge = TextStyle(
     fontSize: 16,
     color: PortfolioColors.white,
@@ -138,7 +106,6 @@ class PortfolioTextStyles {
     color: PortfolioColors.grayMedium,
   );
 
-  // نصوص مخصصة
   static const TextStyle goldenText = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
@@ -152,12 +119,7 @@ class PortfolioTextStyles {
   );
 }
 
-// ========================================
-// Container Decorations
-// ========================================
-
 class PortfolioDecorations {
-  // Card عادي
   static BoxDecoration get defaultCard => BoxDecoration(
     color: PortfolioColors.cardDark,
     borderRadius: BorderRadius.circular(12),
@@ -170,7 +132,6 @@ class PortfolioDecorations {
     ],
   );
 
-  // Card ذهبي
   static BoxDecoration get goldenCard => BoxDecoration(
     color: PortfolioColors.golden,
     borderRadius: BorderRadius.circular(12),
@@ -183,7 +144,6 @@ class PortfolioDecorations {
     ],
   );
 
-  // Gradient داكن
   static BoxDecoration get darkGradient => const BoxDecoration(
     gradient: LinearGradient(
       begin: Alignment.topLeft,
@@ -193,7 +153,6 @@ class PortfolioDecorations {
     borderRadius: BorderRadius.all(Radius.circular(12)),
   );
 
-  // Gradient ذهبي
   static BoxDecoration get goldenGradient => const BoxDecoration(
     gradient: LinearGradient(
       begin: Alignment.topLeft,
