@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/appthemCloude.dart';
-import 'package:protfolio/feature/tabs/widget/_buildProfileCard.dart';
+import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/feature/tabs/widget/buildProfileCard.dart';
+import 'package:protfolio/feature/tabs/widget/defaultElevated_Button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Contacttab extends StatelessWidget {
@@ -23,7 +24,7 @@ class Contacttab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Profile Header Card
-                buildProfileCard(),
+                ProfileCard(),
 
                 Divider(
                   color: PortfolioColors.golden,
@@ -85,7 +86,6 @@ class Contacttab extends StatelessWidget {
     );
   }
 
-  // فتح لينك عام (مثلا GitHub أو Facebook)
   Future<void> openLink(String url) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
@@ -93,7 +93,6 @@ class Contacttab extends StatelessWidget {
     }
   }
 
-  // فتح واتساب
   Future<void> openWhatsApp(String phone, {String text = ""}) async {
     final Uri uri = Uri.parse("https://wa.me/$phone?text=$text");
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
@@ -101,7 +100,6 @@ class Contacttab extends StatelessWidget {
     }
   }
 
-  // فتح الإيميل
   Future<void> openEmail(String email) async {
     final Uri uri = Uri(
       scheme: 'mailto',
@@ -111,43 +109,5 @@ class Contacttab extends StatelessWidget {
     if (!await launchUrl(uri)) {
       throw Exception("Could not send email");
     }
-  }
-
-  // زرار جاهز لإعادة الاستخدام (بعرض الشاشة)
-  Widget defaultelevatedbutton(
-    BuildContext context,
-    void Function()? onPressed,
-
-    IconData icon,
-    String text,
-  ) {
-    return SizedBox(
-      width: double.infinity, // ياخد عرض الشاشة كله
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: PortfolioColors.cardDark,
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        onPressed: onPressed,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Icon(icon, color: PortfolioColors.golden, size: 24),
-            SizedBox(width: 30),
-            Text(
-              text,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: PortfolioColors.golden,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }

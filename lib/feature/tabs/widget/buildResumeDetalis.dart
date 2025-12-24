@@ -1,44 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/appthemCloude.dart';
-import 'package:protfolio/feature/tabs/widget/_buildProfileCard.dart';
+import 'package:protfolio/core/Appthem.dart';
 import 'package:protfolio/feature/tabs/widget/default_circle_avatar.dart';
 import 'package:protfolio/feature/tabs/widget/pdf.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:protfolio/feature/tabs/widget/rowItemInSkills.dart';
 
-class Resumetab extends StatefulWidget {
-  const Resumetab({super.key});
+class Buildresumedetalis extends StatelessWidget {
+  const Buildresumedetalis({super.key});
 
-  @override
-  State<Resumetab> createState() => _ResumetabState();
-}
-
-class _ResumetabState extends State<Resumetab> {
-  final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Profile Header Card
-              buildProfileCard(),
-
-              const SizedBox(height: 16),
-              _buildresumedetalis(context),
-
-              // About Me Section
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildresumedetalis(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -168,4 +138,4 @@ class _ResumetabState extends State<Resumetab> {
       ),
     );
   }
-}
+  }

@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/appthemCloude.dart';
+import 'package:protfolio/core/Appthem.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-
-Widget defaultCircleAvatar(BuildContext context) {
-  return CircleAvatar(radius: 5, backgroundColor: PortfolioColors.golden);
-  // backgroundImage: AssetImage(imagePath),
-  //   child: const Icon(Icons.person, size: 40),
-  // );}
-}
 
 Widget defaultitemskills(
   BuildContext context,
@@ -35,7 +28,6 @@ Widget defaultitemskills(
       children: [
         Row(
           children: [
-            // defaultCircleAvatar(context),
             SizedBox(width: 25),
 
             Text(
@@ -77,19 +69,4 @@ Widget defaultitemskills(
       ],
     ),
   );
-}
-
-Widget onlyrowiteminskills(BuildContext context, String text) {
-  return Row(
-    children: [
-      defaultCircleAvatar(context),
-
-      SizedBox(width: 25),
-
-      Text(text, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-    ],
-  );
-  // backgroundImage: AssetImage(imagePath),
-  //   child: const Icon(Icons.person, size: 40),
-  // );}
 }
