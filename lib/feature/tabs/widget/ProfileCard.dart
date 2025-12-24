@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/Appthem.dart';
-import 'package:protfolio/core/assetImages.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:protfolio/core/assets/assetImages.dart';
+import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 
 class ProfileCard extends StatefulWidget {
@@ -36,7 +37,7 @@ class __ProfileCardState extends State<ProfileCard> {
             ],
           ),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
+            // mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,8 +46,8 @@ class __ProfileCardState extends State<ProfileCard> {
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
                       assetImage.image,
-                      height: 90,
-                      width: 77,
+                      height: 90.h,
+                      width: 77.w,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -96,12 +97,12 @@ class __ProfileCardState extends State<ProfileCard> {
                 firstChild: const SizedBox.shrink(),
                 secondChild: Column(
                   children: [
-                    defaultdivider(0, 0, 0),
-                    const SizedBox(height: 10),
-                    const Row(
+                    defaultdivider(0.h, 0.w, 0.w),
+                    SizedBox(height: 10.h),
+                    Row(
                       children: [
                         Icon(Icons.message, color: PortfolioColors.golden),
-                        SizedBox(width: 30),
+                        SizedBox(width: 30.w),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -122,11 +123,11 @@ class __ProfileCardState extends State<ProfileCard> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
-                    const Row(
+                    SizedBox(height: 10.h),
+                    Row(
                       children: [
                         Icon(Icons.phone, color: PortfolioColors.golden),
-                        SizedBox(width: 30),
+                        SizedBox(width: 30.w),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -144,10 +145,10 @@ class __ProfileCardState extends State<ProfileCard> {
                       ],
                     ),
                     const SizedBox(height: 10),
-                    const Row(
+                    Row(
                       children: [
                         Icon(Icons.party_mode, color: PortfolioColors.golden),
-                        SizedBox(width: 30),
+                        SizedBox(width: 30.w),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -168,11 +169,11 @@ class __ProfileCardState extends State<ProfileCard> {
                       ],
                     ),
 
-                    const SizedBox(height: 10),
-                    const Row(
+                    SizedBox(height: 10.h),
+                    Row(
                       children: [
                         Icon(Icons.pin_drop, color: PortfolioColors.golden),
-                        SizedBox(width: 30),
+                        SizedBox(width: 30.w),
                         Column(
                           children: [
                             Text(
@@ -191,7 +192,7 @@ class __ProfileCardState extends State<ProfileCard> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10.h),
                   ],
                 ),
               ),

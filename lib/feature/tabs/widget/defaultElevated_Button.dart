@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/core/constants/Appthem.dart';
 
 Widget defaultelevatedbutton(
-
-  void Function()? onPressed,
-
+  VoidCallback? onPressed,
   IconData icon,
   String text,
 ) {
