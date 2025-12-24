@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/core/assetImages.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
-import 'package:protfolio/feature/tabs/widget/images_static_widget.dart';
 
 class ProfileCard extends StatefulWidget {
   const ProfileCard({super.key});
@@ -44,7 +44,7 @@ class __ProfileCardState extends State<ProfileCard> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
-                      StaticImage.image,
+                      assetImage.image,
                       height: 90,
                       width: 77,
                       fit: BoxFit.cover,
@@ -88,6 +88,11 @@ class __ProfileCardState extends State<ProfileCard> {
               ),
 
               AnimatedCrossFade(
+                crossFadeState:
+                    isExpanded
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst,
+                duration: const Duration(milliseconds: 300),
                 firstChild: const SizedBox.shrink(),
                 secondChild: Column(
                   children: [
@@ -189,11 +194,6 @@ class __ProfileCardState extends State<ProfileCard> {
                     const SizedBox(height: 10),
                   ],
                 ),
-                crossFadeState:
-                    isExpanded
-                        ? CrossFadeState.showSecond
-                        : CrossFadeState.showFirst,
-                duration: const Duration(milliseconds: 300),
               ),
             ],
           ),
