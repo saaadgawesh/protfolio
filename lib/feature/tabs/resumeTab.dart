@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/apptheme/appthemCloude.dart';
-import 'package:protfolio/tabs/widget/_buildProfileCard.dart';
-import 'package:protfolio/tabs/widget/default_circle_avatar.dart';
-import 'package:protfolio/tabs/widget/pdf.dart';
+import 'package:protfolio/core/appthemCloude.dart';
+import 'package:protfolio/feature/tabs/widget/_buildProfileCard.dart';
+import 'package:protfolio/feature/tabs/widget/default_circle_avatar.dart';
+import 'package:protfolio/feature/tabs/widget/pdf.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class Resumetab extends StatefulWidget {

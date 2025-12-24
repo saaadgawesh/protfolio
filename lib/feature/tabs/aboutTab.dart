@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/apptheme/appthemCloude.dart';
-import 'package:protfolio/tabs/widget/_buildProfileCard.dart';
+import 'package:protfolio/core/appthemCloude.dart';
+import 'package:protfolio/feature/tabs/widget/_buildProfileCard.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Abouttab extends StatefulWidget {
@@ -103,7 +103,7 @@ class _AbouttabState extends State<Abouttab> {
           ),
           const SizedBox(height: 12),
           Text(
-            'Passionate Flutter developer with 6+ months of experience in mobile app development. '
+            'Passionate Flutter developer with +2 years of experience in mobile app development. '
             'I specialize in creating beautiful, performant cross-platform applications that deliver '
             'exceptional user experiences. My expertise includes state management, API integration, '
             'and implementing modern UI/UX designs.',

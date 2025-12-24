@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/apptheme/appthemCloude.dart';
-import 'package:protfolio/tabs/aboutTab.dart';
-import 'package:protfolio/tabs/cotacts_tab.dart';
-import 'package:protfolio/tabs/protfilioTab.dart';
-import 'package:protfolio/tabs/resumeTab.dart';
+import 'package:protfolio/core/appthemCloude.dart';
+import 'package:protfolio/feature/tabs/aboutTab.dart';
+import 'package:protfolio/feature/tabs/cotacts_tab.dart';
+import 'package:protfolio/feature/tabs/protfilioTab.dart';
+import 'package:protfolio/feature/tabs/resumeTab.dart';
 
-class Homepage extends StatefulWidget {
-  const Homepage({super.key});
+class NavBar extends StatefulWidget {
+  const NavBar({super.key});
 
   @override
-  State<Homepage> createState() => _HomepageState();
+  State<NavBar> createState() => _NavBarState();
 }
 
-class _HomepageState extends State<Homepage> {
+class _NavBarState extends State<NavBar> {
   List<Widget> tabs = [
     const Abouttab(),
     const Resumetab(),
