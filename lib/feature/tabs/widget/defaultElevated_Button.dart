@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:protfolio/core/Appthem.dart';
 
 Widget defaultelevatedbutton(
-  BuildContext context,
+
   void Function()? onPressed,
 
   IconData icon,

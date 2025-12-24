@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
@@ -48,12 +49,7 @@ class SkillsSection extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          Divider(
-            color: PortfolioColors.golden,
-            thickness: 5,
-            indent: 2,
-            endIndent: 250,
-          ),
+          defaultdivider(3, 0, 120),
           const SizedBox(height: 16),
           ...skills
               .map(

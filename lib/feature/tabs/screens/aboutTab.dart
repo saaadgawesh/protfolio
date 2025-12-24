@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/feature/tabs/widget/buildAboutSection.dart';
-import 'package:protfolio/feature/tabs/widget/buildProfileCard.dart';
-import 'package:protfolio/feature/tabs/widget/buildSkillsSection.dart';
+import 'package:protfolio/feature/tabs/widget/AboutSection.dart';
+import 'package:protfolio/feature/tabs/widget/ProfileCard.dart';
+import 'package:protfolio/feature/tabs/widget/SkillsSection.dart';
 import 'package:protfolio/feature/tabs/widget/recommendationSection.dart';
 
 class AboutTab extends StatefulWidget {

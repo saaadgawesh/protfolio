@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/feature/tabs/widget/buildProfileCard.dart';
-import 'package:protfolio/feature/tabs/widget/buildResumeDetalis.dart';
+import 'package:protfolio/feature/tabs/widget/ProfileCard.dart';
+import 'package:protfolio/feature/tabs/widget/ResumeDetalis.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class Resumetab extends StatefulWidget {

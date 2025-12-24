@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -29,12 +30,7 @@ class AboutSection extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          Divider(
-            color: PortfolioColors.golden,
-            thickness: 5,
-            indent: 2,
-            endIndent: 250,
-          ),
+         defaultdivider(3, 0, 200),
           const SizedBox(height: 12),
           Text(
             'Passionate Flutter developer with +2 years of experience in mobile app development. '
