@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/Appthem.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/feature/tabs/widget/ProfileCard.dart';
 import 'package:protfolio/feature/tabs/widget/defaultElevated_Button.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:protfolio/feature/tabs/widget/open_link_widgets.dart';
 
 class Contacttab extends StatelessWidget {
   const Contacttab({super.key});
@@ -36,7 +37,7 @@ class Contacttab extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                defaultdivider(3, 0, 250),
+                defaultdivider(3.h, 0.w, 250.w),
                 const SizedBox(height: 12),
 
                 // Buttons (full width)
@@ -69,30 +70,5 @@ class Contacttab extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Future<void> openLink(String url) async {
-    final Uri uri = Uri.parse(url);
-    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-      throw Exception('Could not launch $url');
-    }
-  }
-
-  Future<void> openWhatsApp(String phone, {String text = ""}) async {
-    final Uri uri = Uri.parse("https://wa.me/$phone?text=$text");
-    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-      throw Exception("Could not launch WhatsApp");
-    }
-  }
-
-  Future<void> openEmail(String email) async {
-    final Uri uri = Uri(
-      scheme: 'mailto',
-      path: email,
-      query: 'subject=Hello&body=How are you?',
-    );
-    if (!await launchUrl(uri)) {
-      throw Exception("Could not send email");
-    }
   }
 }

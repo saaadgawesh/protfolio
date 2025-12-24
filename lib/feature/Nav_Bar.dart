@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/Appthem.dart';
-import 'package:protfolio/feature/tabs/screens/aboutTab.dart';
-import 'package:protfolio/feature/tabs/screens/cotacts_tab.dart';
-import 'package:protfolio/feature/tabs/screens/protfilioTab.dart';
-import 'package:protfolio/feature/tabs/screens/resumeTab.dart';
+import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/feature/tabs/screens/AboutMe_Tab.dart';
+import 'package:protfolio/feature/tabs/screens/Contacts_Tab.dart';
+import 'package:protfolio/feature/tabs/screens/Protofilio_Tab.dart';
+import 'package:protfolio/feature/tabs/screens/Resume_Tab.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -19,20 +19,20 @@ class _NavBarState extends State<NavBar> {
     const PortfolioTab(),
     const Contacttab(),
   ];
-  int index1 = 0;
+  int _index1 = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: tabs[index1],
+      body: tabs[_index1],
 
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: PortfolioColors.golden,
 
-        currentIndex: index1,
+        currentIndex: _index1,
         onTap: (value) {
           setState(() {
-            index1 = value;
+            _index1 = value;
           });
         },
         items: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/Appthem.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 import 'package:protfolio/feature/tabs/widget/default_circle_avatar.dart';
 import 'package:protfolio/feature/tabs/widget/pdf.dart';
@@ -33,7 +34,7 @@ class Buildresumedetalis extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          defaultdivider(3, 0, 130),
+          defaultdivider(3.h, 0.w, 130.w),
           const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 Widget defaultitemskills(
