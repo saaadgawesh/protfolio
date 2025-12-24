@@ -10,7 +10,7 @@ class PdfButton extends StatefulWidget {
 }
 
 class _PdfButtonState extends State<PdfButton> {
-  final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _pdfKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _PdfButtonState extends State<PdfButton> {
         titleTextStyle: TextStyle(color: PortfolioColors.golden, fontSize: 18),
         // leading: Icon(Icons.arrow_back_ios, color: PortfolioColors.goldenAlt),
       ),
-      body: SfPdfViewer.asset('assets/m.pdf', key: _pdfViewerKey),
+      body: SfPdfViewer.asset('assets/m.pdf', key: _pdfKey),
     );
   }
 }
