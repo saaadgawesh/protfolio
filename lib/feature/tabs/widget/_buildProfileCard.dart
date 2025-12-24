@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/apptheme/appthemCloude.dart';
-import 'package:protfolio/tabs/widget/images_static_widget.dart';
+import 'package:protfolio/core/appthemCloude.dart';
+import 'package:protfolio/feature/tabs/widget/images_static_widget.dart';
 
 class buildProfileCard extends StatefulWidget {
   const buildProfileCard({super.key});

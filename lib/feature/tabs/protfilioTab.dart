@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/tabs/widget/_buildProfileCard.dart';
+import 'package:protfolio/feature/tabs/widget/_buildProfileCard.dart';
 
 class PortfolioTab extends StatelessWidget {
   const PortfolioTab({super.key});
@@ -18,7 +18,7 @@ class PortfolioTab extends StatelessWidget {
               buildProfileCard(),
 
               const SizedBox(height: 16),
-              
+
 
               // About Me Section
             ],

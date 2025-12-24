@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:protfolio/Homepage.dart';
-import 'package:protfolio/apptheme/appthemCloude.dart';
+import 'package:protfolio/core/appthemCloude.dart';
+import 'package:protfolio/feature/Nav_Bar.dart';
 
 void main() {
   runApp(Protfolioapp());
@@ -22,7 +22,7 @@ class Protfolioapp extends StatelessWidget {
         right: false,
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: Homepage(),
+          home: NavBar(),
           theme: PortfolioColors.darkTheme,
         ),
       ),

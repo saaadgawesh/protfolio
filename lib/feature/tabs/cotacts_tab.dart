@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/apptheme/appthemCloude.dart';
-import 'package:protfolio/tabs/widget/_buildProfileCard.dart';
+import 'package:protfolio/core/appthemCloude.dart';
+import 'package:protfolio/feature/tabs/widget/_buildProfileCard.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Contacttab extends StatelessWidget {
