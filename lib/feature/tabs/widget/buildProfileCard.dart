@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/appthemCloude.dart';
+import 'package:protfolio/core/Appthem.dart';
 import 'package:protfolio/feature/tabs/widget/images_static_widget.dart';
 
-class buildProfileCard extends StatefulWidget {
-  const buildProfileCard({super.key});
+class ProfileCard extends StatefulWidget {
+  const ProfileCard({super.key});
 
   @override
-  State<buildProfileCard> createState() => __buildProfileCardState();
+  State<ProfileCard> createState() => __ProfileCardState();
 }
 
-class __buildProfileCardState extends State<buildProfileCard> {
-  bool isExpanded = false; // الحالة (مفتوح/مغلق)
+class __ProfileCardState extends State<ProfileCard> {
+  bool isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,6 @@ class __buildProfileCardState extends State<buildProfileCard> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // الصورة شمال
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
@@ -71,7 +70,6 @@ class __buildProfileCardState extends State<buildProfileCard> {
                     ],
                   ),
 
-                  // زرار يمين
                   IconButton(
                     icon: Icon(
                       isExpanded
@@ -88,7 +86,6 @@ class __buildProfileCardState extends State<buildProfileCard> {
                 ],
               ),
 
-              // التفاصيل تظهر وتختفي مع الأنيميشن
               AnimatedCrossFade(
                 firstChild: const SizedBox.shrink(),
                 secondChild: Column(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/appthemCloude.dart';
-import 'package:protfolio/feature/tabs/aboutTab.dart';
-import 'package:protfolio/feature/tabs/cotacts_tab.dart';
-import 'package:protfolio/feature/tabs/protfilioTab.dart';
-import 'package:protfolio/feature/tabs/resumeTab.dart';
+import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/feature/tabs/screens/aboutTab.dart';
+import 'package:protfolio/feature/tabs/screens/cotacts_tab.dart';
+import 'package:protfolio/feature/tabs/screens/protfilioTab.dart';
+import 'package:protfolio/feature/tabs/screens/resumeTab.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -14,7 +14,7 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   List<Widget> tabs = [
-    const Abouttab(),
+    const AboutTab(),
     const Resumetab(),
     const PortfolioTab(),
     const Contacttab(),

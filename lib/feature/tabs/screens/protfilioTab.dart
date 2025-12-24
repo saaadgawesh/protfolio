@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/feature/tabs/widget/_buildProfileCard.dart';
+import 'package:protfolio/feature/tabs/widget/buildProfileCard.dart';
 
 class PortfolioTab extends StatelessWidget {
   const PortfolioTab({super.key});
@@ -13,15 +13,7 @@ class PortfolioTab extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Profile Header Card
-              buildProfileCard(),
-
-              const SizedBox(height: 16),
-
-
-              // About Me Section
-            ],
+            children: [ProfileCard(), const SizedBox(height: 16)],
           ),
         ),
       ),
