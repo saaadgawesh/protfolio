@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/Appthem.dart';
-import 'package:protfolio/feature/tabs/widget/buildProfileCard.dart';
+import 'package:protfolio/feature/tabs/widget/ProfileCard.dart';
 import 'package:protfolio/feature/tabs/widget/defaultElevated_Button.dart';
+import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Contacttab extends StatelessWidget {
@@ -26,13 +27,6 @@ class Contacttab extends StatelessWidget {
                 // Profile Header Card
                 ProfileCard(),
 
-                Divider(
-                  color: PortfolioColors.golden,
-                  thickness: 1,
-                  indent: 2,
-                  endIndent: 1,
-                ),
-
                 const SizedBox(height: 16),
 
                 Text(
@@ -42,38 +36,29 @@ class Contacttab extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                Divider(
-                  color: PortfolioColors.golden,
-                  thickness: 5,
-                  indent: 2,
-                  endIndent: 250,
-                ),
+                defaultdivider(3, 0, 250),
                 const SizedBox(height: 12),
 
                 // Buttons (full width)
                 defaultelevatedbutton(
-                  context,
                   () => openLink("https://github.com/saaadgawesh"),
                   Icons.link,
                   "Open GitHub",
                 ),
                 const SizedBox(height: 8),
                 defaultelevatedbutton(
-                  context,
                   () => openWhatsApp("201031214881"),
                   Icons.link,
                   "Open WhatsApp",
                 ),
                 const SizedBox(height: 8),
                 defaultelevatedbutton(
-                  context,
                   () => openEmail("saadgawesh608@gmail.com"),
                   Icons.email,
                   "Send Email",
                 ),
                 const SizedBox(height: 8),
                 defaultelevatedbutton(
-                  context,
                   () => openLink("https://facebook.com/saadgawesh"),
                   Icons.facebook,
                   "Open Facebook",

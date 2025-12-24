@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 import 'package:protfolio/feature/tabs/widget/images_static_widget.dart';
 
 class ProfileCard extends StatefulWidget {
@@ -89,9 +90,10 @@ class __ProfileCardState extends State<ProfileCard> {
               AnimatedCrossFade(
                 firstChild: const SizedBox.shrink(),
                 secondChild: Column(
-                  children: const [
-                    SizedBox(height: 10),
-                    Row(
+                  children: [
+                    defaultdivider(0, 0, 0),
+                    const SizedBox(height: 10),
+                    const Row(
                       children: [
                         Icon(Icons.message, color: PortfolioColors.golden),
                         SizedBox(width: 30),
@@ -115,8 +117,8 @@ class __ProfileCardState extends State<ProfileCard> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
-                    Row(
+                    const SizedBox(height: 10),
+                    const Row(
                       children: [
                         Icon(Icons.phone, color: PortfolioColors.golden),
                         SizedBox(width: 30),
@@ -136,8 +138,8 @@ class __ProfileCardState extends State<ProfileCard> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
-                    Row(
+                    const SizedBox(height: 10),
+                    const Row(
                       children: [
                         Icon(Icons.party_mode, color: PortfolioColors.golden),
                         SizedBox(width: 30),
@@ -161,8 +163,8 @@ class __ProfileCardState extends State<ProfileCard> {
                       ],
                     ),
 
-                    SizedBox(height: 10),
-                    Row(
+                    const SizedBox(height: 10),
+                    const Row(
                       children: [
                         Icon(Icons.pin_drop, color: PortfolioColors.golden),
                         SizedBox(width: 30),
@@ -184,7 +186,7 @@ class __ProfileCardState extends State<ProfileCard> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                   ],
                 ),
                 crossFadeState:

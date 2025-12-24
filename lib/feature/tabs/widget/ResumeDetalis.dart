@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/Appthem.dart';
+import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 import 'package:protfolio/feature/tabs/widget/default_circle_avatar.dart';
 import 'package:protfolio/feature/tabs/widget/pdf.dart';
 import 'package:protfolio/feature/tabs/widget/rowItemInSkills.dart';
@@ -32,12 +33,7 @@ class Buildresumedetalis extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          Divider(
-            color: PortfolioColors.golden,
-            thickness: 5,
-            indent: 2,
-            endIndent: 250,
-          ),
+          defaultdivider(3, 0, 130),
           const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -138,4 +134,4 @@ class Buildresumedetalis extends StatelessWidget {
       ),
     );
   }
-  }
+}
