@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/core/assets/assetImages.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
+import 'package:protfolio/feature/tabs/widget/profilecarditem.dart';
 
 class ProfileCard extends StatefulWidget {
   const ProfileCard({super.key});
@@ -37,7 +38,6 @@ class __ProfileCardState extends State<ProfileCard> {
             ],
           ),
           child: Column(
-            // mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -99,98 +99,32 @@ class __ProfileCardState extends State<ProfileCard> {
                   children: [
                     defaultdivider(0.h, 0.w, 0.w),
                     SizedBox(height: 10.h),
-                    Row(
-                      children: [
-                        Icon(Icons.message, color: PortfolioColors.golden),
-                        SizedBox(width: 30.w),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Email',
-                              style: TextStyle(color: Colors.grey),
-                              textAlign: TextAlign.start,
-                            ),
-                            Text(
-                              'saadgawesg608@gmail.com',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                color: PortfolioColors.golden,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+
+                    ProfileCardItem(
+                      title: "Email",
+                      description: "saadgawesg608@gmail.com",
+                      icon: Icons.message,
                     ),
                     SizedBox(height: 10.h),
-                    Row(
-                      children: [
-                        Icon(Icons.phone, color: PortfolioColors.golden),
-                        SizedBox(width: 30.w),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Phone', style: TextStyle(color: Colors.grey)),
-                            Text(
-                              '+20/1031214881',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                color: PortfolioColors.golden,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    ProfileCardItem(
+                      title: "Phone",
+                      description: "+20/1031214881",
+                      icon: Icons.phone,
                     ),
+
                     const SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Icon(Icons.party_mode, color: PortfolioColors.golden),
-                        SizedBox(width: 30.w),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Birthday',
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                            Text(
-                              '12/3/1991',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                color: PortfolioColors.golden,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+
+                    ProfileCardItem(
+                      title: "Birthday",
+                      description: "12/3/1991",
+                      icon: Icons.party_mode,
                     ),
 
                     SizedBox(height: 10.h),
-                    Row(
-                      children: [
-                        Icon(Icons.pin_drop, color: PortfolioColors.golden),
-                        SizedBox(width: 30.w),
-                        Column(
-                          children: [
-                            Text(
-                              'Location',
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                            Text(
-                              'Egypt',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                color: PortfolioColors.golden,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    ProfileCardItem(
+                      title: "location",
+                      description: "Egypt",
+                      icon: Icons.pin_drop,
                     ),
                     SizedBox(height: 10.h),
                   ],

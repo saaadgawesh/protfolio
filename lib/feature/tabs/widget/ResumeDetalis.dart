@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
-import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
+
 import 'package:protfolio/feature/tabs/widget/default_circle_avatar.dart';
 import 'package:protfolio/feature/tabs/widget/pdf.dart';
 import 'package:protfolio/feature/tabs/widget/rowItemInSkills.dart';
+import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 
 class Buildresumedetalis extends StatelessWidget {
   const Buildresumedetalis({super.key});

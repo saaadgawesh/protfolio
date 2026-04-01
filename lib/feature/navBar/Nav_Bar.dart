@@ -19,38 +19,38 @@ class _NavBarState extends State<NavBar> {
     const PortfolioTab(),
     const Contacttab(),
   ];
-  int _index1 = 0;
+  int _CurrentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: tabs[_index1],
+      body: tabs[_CurrentIndex],
 
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: PortfolioColors.golden,
 
-        currentIndex: _index1,
+        currentIndex: _CurrentIndex,
         onTap: (value) {
           setState(() {
-            _index1 = value;
+            _CurrentIndex = value;
           });
         },
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.info_outline),
-            label: 'about',
+            label: 'About',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.description_outlined),
-            label: 'resume',
+            label: 'Resume',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.work_outline),
-            label: 'portfolio',
+            label: 'Portfolio',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.contact_mail_outlined),
-            label: 'contact',
+            label: 'Contact',
           ),
         ],
       ),

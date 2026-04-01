@@ -31,7 +31,7 @@ class AboutSection extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-         defaultdivider(3.h, 0.w, 200.w),
+          defaultdivider(3.h, 0.w, 200.w),
           const SizedBox(height: 12),
           Text(
             'Passionate Flutter developer with +2 years of experience in mobile app development. '
