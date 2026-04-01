@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/feature/navBar/Nav_Bar.dart';
 
-class Protfolioapp extends StatelessWidget {
-  const Protfolioapp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {

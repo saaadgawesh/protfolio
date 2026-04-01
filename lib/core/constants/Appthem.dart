@@ -28,11 +28,10 @@ class PortfolioColors {
         primary: PortfolioColors.golden,
         secondary: PortfolioColors.goldenAlt,
         surface: PortfolioColors.cardDark,
-        background: PortfolioColors.darkPrimary,
+
         onPrimary: PortfolioColors.darkPrimary,
         onSecondary: PortfolioColors.white,
         onSurface: PortfolioColors.white,
-        onBackground: PortfolioColors.white,
       ),
 
       appBarTheme: const AppBarTheme(
