@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/utils/App_Size.dart';
 
 class ProfileCardItem extends StatelessWidget {
   const ProfileCardItem({
@@ -17,17 +17,23 @@ class ProfileCardItem extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Icon(icon, color: PortfolioColors.golden),
-        SizedBox(width: 30.w),
+        Icon(icon, color: PortfolioColors.golden, size: AppSizes.icon24),
+        SizedBox(width: AppSizes.w30),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: TextStyle(color: Colors.grey)),
+            Text(
+              title,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: AppSizes.sp12,
+              ),
+            ),
             Text(
               description,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: AppSizes.sp18,
                 color: PortfolioColors.golden,
               ),
             ),

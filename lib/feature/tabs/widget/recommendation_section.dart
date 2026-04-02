@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
-import 'package:protfolio/feature/tabs/widget/recommendationsList.dart';
+import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/feature/tabs/widget/recommendations_list.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // ignore: camel_case_types
@@ -21,7 +22,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 4, bottom: 12),
+          padding: EdgeInsets.only(left: AppSizes.w4, bottom: AppSizes.h12),
           child: Text(
             'Recommendations',
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -31,8 +32,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
           ),
         ),
         SizedBox(
-          height: 180,
-
+          height: AppSizes.h180,
           child: PageView.builder(
             controller: _controller,
             onPageChanged: (value) {
@@ -45,16 +45,16 @@ class _RecomendationSectionState extends State<RecomendationSection> {
             itemBuilder: (context, index) {
               final recommendation = recommendations[index];
               return Container(
-                margin: const EdgeInsets.only(right: 8),
-                padding: const EdgeInsets.all(16),
+                margin: EdgeInsets.only(right: AppSizes.w8),
+                padding: EdgeInsets.all(AppSizes.r16),
                 decoration: BoxDecoration(
                   color: PortfolioColors.cardDark,
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(AppSizes.r15),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.1),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
+                      blurRadius: AppSizes.r8,
+                      offset: Offset(0, AppSizes.h4),
                     ),
                   ],
                 ),
@@ -64,33 +64,35 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                     Row(
                       children: [
                         CircleAvatar(
-                          radius: 20,
+                          radius: AppSizes.r20,
                           backgroundColor: PortfolioColors.golden,
                           child: Text(
                             recommendation['name']![0],
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
+                              fontSize: AppSizes.sp16,
                             ),
                           ),
                         ),
-                        const SizedBox(width: 12),
+                        SizedBox(width: AppSizes.w12),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 recommendation['name']!,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
+                                  fontSize: AppSizes.sp16,
                                 ),
                               ),
                               Text(
                                 recommendation['position']!,
                                 style: TextStyle(
                                   color: Colors.grey[400],
-                                  fontSize: 12,
+                                  fontSize: AppSizes.sp12,
                                 ),
                               ),
                             ],
@@ -98,11 +100,15 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 12),
+                    SizedBox(height: AppSizes.h12),
                     Expanded(
                       child: Text(
                         recommendation['text']!,
-                        style: TextStyle(color: Colors.grey[300], height: 1.4),
+                        style: TextStyle(
+                          color: Colors.grey[300],
+                          fontSize: AppSizes.sp14,
+                          height: 1.4,
+                        ),
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -113,7 +119,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
             },
           ),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: AppSizes.h16),
         Center(
           child: SmoothPageIndicator(
             controller: _controller,
@@ -126,8 +132,8 @@ class _RecomendationSectionState extends State<RecomendationSection> {
               );
             },
             effect: WormEffect(
-              dotHeight: 8,
-              dotWidth: 8,
+              dotHeight: AppSizes.h8,
+              dotWidth: AppSizes.w8,
               activeDotColor: PortfolioColors.golden,
             ),
           ),

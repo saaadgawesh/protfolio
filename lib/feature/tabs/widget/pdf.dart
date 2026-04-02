@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class PdfButton extends StatefulWidget {
@@ -17,7 +18,10 @@ class _PdfButtonState extends State<PdfButton> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(" CV"),
-        titleTextStyle: TextStyle(color: PortfolioColors.golden, fontSize: 18),
+        titleTextStyle: TextStyle(
+          color: PortfolioColors.golden,
+          fontSize: AppSizes.sp18,
+        ),
       ),
       body: SfPdfViewer.asset('assets/m.pdf', key: _pdfKey),
     );

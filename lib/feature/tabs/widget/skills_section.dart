@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 
 class SkillsSection extends StatelessWidget {
@@ -28,15 +28,15 @@ class SkillsSection extends StatelessWidget {
     ];
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(AppSizes.r16),
       decoration: BoxDecoration(
         color: PortfolioColors.cardDark,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(AppSizes.r15),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
+            blurRadius: AppSizes.r8,
+            offset: Offset(0, AppSizes.h4),
           ),
         ],
       ),
@@ -50,43 +50,44 @@ class SkillsSection extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          defaultdivider(3.h, 0.w, 120.w),
-          const SizedBox(height: 16),
+          defaultdivider(AppSizes.h3, 0, AppSizes.w120),
+          SizedBox(height: AppSizes.h16),
           ...skills
               .map(
                 (skill) => Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
+                  padding: EdgeInsets.only(bottom: AppSizes.h12),
                   child: Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(8),
+                        padding: EdgeInsets.all(AppSizes.r8),
                         decoration: BoxDecoration(
                           color: PortfolioColors.golden,
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(AppSizes.r8),
                         ),
                         child: Icon(
                           skill['icon'] as IconData,
                           color: Colors.white,
-                          size: 20,
+                          size: AppSizes.icon20,
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: AppSizes.w12),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               skill['title'] as String,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500,
+                                fontSize: AppSizes.sp16,
                               ),
                             ),
                             Text(
                               skill['subtitle'] as String,
                               style: TextStyle(
                                 color: Colors.grey[400],
-                                fontSize: 12,
+                                fontSize: AppSizes.sp12,
                               ),
                             ),
                           ],

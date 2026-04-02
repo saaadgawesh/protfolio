@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 
 class AboutSection extends StatelessWidget {
@@ -9,15 +9,15 @@ class AboutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(AppSizes.r16),
       decoration: BoxDecoration(
         color: PortfolioColors.cardDark,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(AppSizes.r15),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
+            blurRadius: AppSizes.r8,
+            offset: Offset(0, AppSizes.h4),
           ),
         ],
       ),
@@ -31,8 +31,8 @@ class AboutSection extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          defaultdivider(3.h, 0.w, 200.w),
-          const SizedBox(height: 12),
+          defaultdivider(AppSizes.h3, 0, AppSizes.w200),
+          SizedBox(height: AppSizes.h12),
           Text(
             'Passionate Flutter developer with +2 years of experience in mobile app development. '
             'I specialize in creating beautiful, performant cross-platform applications that deliver '

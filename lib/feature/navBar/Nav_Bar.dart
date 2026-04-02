@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
-import 'package:protfolio/feature/tabs/screens/AboutMe_Tab.dart';
-import 'package:protfolio/feature/tabs/screens/Contacts_Tab.dart';
-import 'package:protfolio/feature/tabs/screens/Protofilio_Tab.dart';
-import 'package:protfolio/feature/tabs/screens/Resume_Tab.dart';
+import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/feature/tabs/screens/aboutme_tab.dart';
+import 'package:protfolio/feature/tabs/screens/contacts_tab.dart';
+import 'package:protfolio/feature/tabs/screens/protofilio_tab.dart';
+import 'package:protfolio/feature/tabs/screens/resume_tab.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -13,7 +14,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  List<Widget> tabs = [
+  final List<Widget> tabs = [
     const AboutTab(),
     const Resumetab(),
     const PortfolioTab(),
@@ -28,7 +29,9 @@ class _NavBarState extends State<NavBar> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: PortfolioColors.golden,
-
+        selectedFontSize: AppSizes.sp12,
+        unselectedFontSize: AppSizes.sp10,
+        iconSize: AppSizes.icon24,
         currentIndex: _CurrentIndex,
         onTap: (value) {
           setState(() {

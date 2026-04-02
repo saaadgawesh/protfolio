@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
-import 'package:protfolio/feature/tabs/widget/ProfileCard.dart';
-import 'package:protfolio/feature/tabs/widget/defaultElevated_Button.dart';
+import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/feature/tabs/widget/Profile_card.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
+import 'package:protfolio/feature/tabs/widget/default_elevated_Button.dart';
 import 'package:protfolio/feature/tabs/widget/open_link_widgets.dart';
-
 
 class Contacttab extends StatelessWidget {
   const Contacttab({super.key});
@@ -15,61 +14,135 @@ class Contacttab extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              color: PortfolioColors.cardDark,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            final bool isWide = constraints.maxWidth >= 1100;
+            final bool isTablet = constraints.maxWidth >= 700;
+            final double horizontalPadding =
+                isWide ? AppSizes.w32 : (isTablet ? AppSizes.w24 : AppSizes.w16);
+            final double contentMaxWidth = isWide ? 1200 : 900;
+            final double sectionSpacing =
+                isTablet ? AppSizes.h20 : AppSizes.h16;
+            final double buttonMaxWidth = isWide ? 420 : double.infinity;
+
+            Widget contactButtons = Wrap(
+              spacing: AppSizes.w12,
+              runSpacing: AppSizes.h12,
               children: [
-                // Profile Header Card
-                ProfileCard(),
-
-                const SizedBox(height: 16),
-
-                Text(
-                  'Contact',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                SizedBox(
+                  width: buttonMaxWidth,
+                  child: defaultelevatedbutton(
+                    () => openLink("https://github.com/saaadgawesh"),
+                    Icons.link,
+                    "Open GitHub",
                   ),
                 ),
-                defaultdivider(3.h, 0.w, 250.w),
-                const SizedBox(height: 12),
-
-                // Buttons (full width)
-                defaultelevatedbutton(
-                  () => openLink("https://github.com/saaadgawesh"),
-                  Icons.link,
-                  "Open GitHub",
+                SizedBox(
+                  width: buttonMaxWidth,
+                  child: defaultelevatedbutton(
+                    () => openWhatsApp("201031214881"),
+                    Icons.link,
+                    "Open WhatsApp",
+                  ),
                 ),
-                const SizedBox(height: 8),
-                defaultelevatedbutton(
-                  () => openWhatsApp("201031214881"),
-                  Icons.link,
-                  "Open WhatsApp",
+                SizedBox(
+                  width: buttonMaxWidth,
+                  child: defaultelevatedbutton(
+                    () => openEmail("saadgawesh608@gmail.com"),
+                    Icons.email,
+                    "Send Email",
+                  ),
                 ),
-                const SizedBox(height: 8),
-                defaultelevatedbutton(
-                  () => openEmail("saadgawesh608@gmail.com"),
-                  Icons.email,
-                  "Send Email",
-                ),
-                const SizedBox(height: 8),
-                defaultelevatedbutton(
-                  () => openLink("https://facebook.com/saadgawesh"),
-                  Icons.facebook,
-                  "Open Facebook",
+                SizedBox(
+                  width: buttonMaxWidth,
+                  child: defaultelevatedbutton(
+                    () => openLink("https://facebook.com/saadgawesh"),
+                    Icons.facebook,
+                    "Open Facebook",
+                  ),
                 ),
               ],
-            ),
-          ),
+            );
+
+            return SingleChildScrollView(
+              padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding,
+                vertical: AppSizes.h16,
+              ),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: contentMaxWidth),
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(
+                      isTablet ? AppSizes.r20 : AppSizes.r16,
+                    ),
+                    decoration: BoxDecoration(
+                      color: PortfolioColors.cardDark,
+                      borderRadius: BorderRadius.circular(AppSizes.r12),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const ProfileCard(),
+                        SizedBox(height: sectionSpacing),
+                        if (isWide)
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: _ContactHeader(
+                                  sectionSpacing: sectionSpacing,
+                                ),
+                              ),
+                              SizedBox(width: sectionSpacing),
+                              Expanded(child: contactButtons),
+                            ],
+                          )
+                        else ...[
+                          _ContactHeader(sectionSpacing: sectionSpacing),
+                          SizedBox(height: sectionSpacing),
+                          contactButtons,
+                        ],
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
         ),
       ),
+    );
+  }
+}
+
+class _ContactHeader extends StatelessWidget {
+  const _ContactHeader({required this.sectionSpacing});
+
+  final double sectionSpacing;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Contact',
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        defaultdivider(AppSizes.h3, 0, AppSizes.w250),
+        SizedBox(height: sectionSpacing * 0.75),
+        Text(
+          'Reach out through any of the links below.',
+          style: Theme.of(
+            context,
+          ).textTheme.bodyMedium?.copyWith(color: Colors.grey[400]),
+        ),
+      ],
     );
   }
 }
