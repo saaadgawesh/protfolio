@@ -19,7 +19,9 @@ class PortfolioTab extends StatelessWidget {
             final bool isDesktop = constraints.maxWidth >= 1200;
             final bool isTablet = constraints.maxWidth >= 700;
             final double horizontalPadding =
-                isDesktop ? AppSizes.w32 : (isTablet ? AppSizes.w24 : AppSizes.w16);
+                isDesktop
+                    ? AppSizes.w32
+                    : (isTablet ? AppSizes.w24 : AppSizes.w16);
 
             return SingleChildScrollView(
               padding: EdgeInsets.all(horizontalPadding),
@@ -119,7 +121,7 @@ class PortfolioTab extends StatelessWidget {
   }) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(AppSizes.r14),
+      padding: EdgeInsets.all(AppSizes.r12),
       decoration: BoxDecoration(
         color: PortfolioColors.cardDarker,
         borderRadius: BorderRadius.circular(AppSizes.r16),
@@ -127,8 +129,8 @@ class PortfolioTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: PortfolioColors.golden, size: AppSizes.icon24),
-          SizedBox(height: AppSizes.h12),
+          Icon(icon, color: PortfolioColors.golden, size: AppSizes.icon20),
+          SizedBox(height: AppSizes.h8),
           Text(
             value,
             maxLines: 1,
@@ -136,16 +138,16 @@ class PortfolioTab extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: Colors.white,
-              fontSize: AppSizes.sp18,
+              fontSize: AppSizes.sp16,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: AppSizes.h6),
+          SizedBox(height: AppSizes.h4),
           Text(
             title,
             style: TextStyle(
               color: PortfolioColors.grayLighter,
-              fontSize: AppSizes.sp12,
+              fontSize: AppSizes.sp11,
             ),
           ),
         ],

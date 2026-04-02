@@ -7,7 +7,9 @@ import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 import 'package:protfolio/feature/tabs/widget/profile_card_item.dart';
 
 class ProfileCard extends StatefulWidget {
-  const ProfileCard({super.key});
+  const ProfileCard({super.key, this.showExpandable = true});
+
+  final bool showExpandable;
 
   @override
   State<ProfileCard> createState() => __ProfileCardState();
@@ -93,22 +95,23 @@ class __ProfileCardState extends State<ProfileCard> {
                               ],
                             ),
                           ),
-                          Center(
-                            child: IconButton(
-                              icon: Icon(
-                                isExpanded
-                                    ? Icons.keyboard_arrow_up
-                                    : Icons.keyboard_arrow_down,
-                                color: PortfolioColors.golden,
-                                size: AppSizes.icon24,
+                          if (widget.showExpandable)
+                            Center(
+                              child: IconButton(
+                                icon: Icon(
+                                  isExpanded
+                                      ? Icons.keyboard_arrow_up
+                                      : Icons.keyboard_arrow_down,
+                                  color: PortfolioColors.golden,
+                                  size: AppSizes.icon24,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    isExpanded = !isExpanded;
+                                  });
+                                },
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  isExpanded = !isExpanded;
-                                });
-                              },
                             ),
-                          ),
                         ],
                       ),
 
@@ -121,7 +124,7 @@ class __ProfileCardState extends State<ProfileCard> {
                   /// 🔽 التفاصيل
                   AnimatedCrossFade(
                     crossFadeState:
-                        isExpanded
+                        widget.showExpandable && isExpanded
                             ? CrossFadeState.showSecond
                             : CrossFadeState.showFirst,
                     duration: const Duration(milliseconds: 300),

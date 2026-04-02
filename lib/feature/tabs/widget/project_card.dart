@@ -73,16 +73,6 @@ class _ProjectContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Wrap(
-          spacing: AppSizes.w8,
-          runSpacing: AppSizes.h8,
-          children: [
-            _InfoChip(label: project.category),
-            _InfoChip(label: project.status),
-            _InfoChip(label: project.duration),
-          ],
-        ),
-        SizedBox(height: AppSizes.h12),
         Text(
           project.title,
           style: theme.textTheme.titleLarge?.copyWith(

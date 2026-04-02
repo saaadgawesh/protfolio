@@ -85,7 +85,7 @@ class Contacttab extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const ProfileCard(),
+                        const ProfileCard(showExpandable: false),
                         SizedBox(height: sectionSpacing),
                         if (isWide)
                           Row(
