@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/model/project_model.dart';
 import 'package:protfolio/feature/tabs/widget/open_link_widgets.dart';
@@ -110,7 +111,7 @@ class _ProjectContent extends StatelessWidget {
         ),
         SizedBox(height: AppSizes.h16),
         Text(
-          'Role: ${project.role}',
+          '${AppStrings.projectRoleLabel}: ${project.role}',
           style: theme.textTheme.bodyMedium?.copyWith(
             color: PortfolioColors.golden,
             fontSize: AppSizes.sp14,
@@ -119,7 +120,7 @@ class _ProjectContent extends StatelessWidget {
         ),
         SizedBox(height: AppSizes.h14),
         Text(
-          'Technologies',
+          AppStrings.projectTechnologiesTitle,
           style: theme.textTheme.titleMedium?.copyWith(
             color: Colors.white,
             fontSize: AppSizes.sp16,
@@ -127,17 +128,23 @@ class _ProjectContent extends StatelessWidget {
           ),
         ),
         SizedBox(height: AppSizes.h8),
-        Wrap(
-          spacing: AppSizes.w8,
-          runSpacing: AppSizes.h8,
+        Column(
           children:
               project.technologies
-                  .map((tech) => _InfoChip(label: tech))
+                  .map(
+                    (tech) => Padding(
+                      padding: EdgeInsets.only(bottom: AppSizes.h8),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: _InfoChip(label: tech),
+                      ),
+                    ),
+                  )
                   .toList(),
         ),
         SizedBox(height: AppSizes.h14),
         Text(
-          'Highlights',
+          AppStrings.projectHighlightsTitle,
           style: theme.textTheme.titleMedium?.copyWith(
             color: Colors.white,
             fontSize: AppSizes.sp16,
@@ -178,10 +185,13 @@ class _ProjectContent extends StatelessWidget {
           spacing: AppSizes.w10,
           runSpacing: AppSizes.h10,
           children: [
-            ElevatedButton.icon(
-              onPressed: () => openLink(project.githubUrl),
-              icon: const Icon(Icons.code),
-              label: const Text('GitHub'),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: () => openLink(project.githubUrl),
+                icon: const Icon(Icons.code),
+                label: const Text(AppStrings.projectGithubButton),
+              ),
             ),
           ],
         ),
@@ -190,31 +200,94 @@ class _ProjectContent extends StatelessWidget {
   }
 }
 
-class _ProjectImageSection extends StatelessWidget {
+class _ProjectImageSection extends StatefulWidget {
   const _ProjectImageSection({required this.project});
 
   final ProjectModel project;
 
   @override
+  State<_ProjectImageSection> createState() => _ProjectImageSectionState();
+}
+
+class _ProjectImageSectionState extends State<_ProjectImageSection> {
+  late final PageController _pageController;
+  int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final images = widget.project.imagePaths;
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(AppSizes.r14),
       child: AspectRatio(
         aspectRatio: 16 / 9,
         child:
-            project.imagePaths.isNotEmpty
-                ? Image.asset(
-                  project.imagePaths.first,
-                  fit: BoxFit.cover,
-                  errorBuilder:
-                      (_, __, ___) => _ProjectImageFallback(
-                        title: project.title,
-                        category: project.category,
+            images.isNotEmpty
+                ? Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    PageView.builder(
+                      controller: _pageController,
+                      itemCount: images.length,
+                      onPageChanged: (index) {
+                        setState(() {
+                          _currentIndex = index;
+                        });
+                      },
+                      itemBuilder: (context, index) {
+                        return Image.asset(
+                          images[index],
+                          fit: BoxFit.cover,
+                          errorBuilder:
+                              (_, __, ___) => _ProjectImageFallback(
+                                title: widget.project.title,
+                                category: widget.project.category,
+                              ),
+                        );
+                      },
+                    ),
+                    if (images.length > 1)
+                      Positioned(
+                        top: AppSizes.h12,
+                        right: AppSizes.w12,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.45),
+                            borderRadius: BorderRadius.circular(AppSizes.r24),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: AppSizes.w8,
+                              vertical: AppSizes.h4,
+                            ),
+                            child: Text(
+                              '${_currentIndex + 1}/${images.length}',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: AppSizes.sp11,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
+                  ],
                 )
                 : _ProjectImageFallback(
-                  title: project.title,
-                  category: project.category,
+                  title: widget.project.title,
+                  category: widget.project.category,
                 ),
       ),
     );

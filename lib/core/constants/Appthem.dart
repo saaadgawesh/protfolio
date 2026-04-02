@@ -21,7 +21,7 @@ class PortfolioColors {
     return ThemeData(
       brightness: Brightness.dark,
       primaryColor: PortfolioColors.golden,
-      scaffoldBackgroundColor: PortfolioColors.darkPrimary,
+      scaffoldBackgroundColor: PortfolioColors.white,
       cardColor: PortfolioColors.cardDark,
 
       colorScheme: const ColorScheme.dark(

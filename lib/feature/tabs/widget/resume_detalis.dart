@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/widget/default_item_skills.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
@@ -38,7 +39,7 @@ class Buildresumedetalis extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Resume Details',
+                AppStrings.resumeTitle,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -65,7 +66,7 @@ class Buildresumedetalis extends StatelessWidget {
                             SizedBox(width: AppSizes.w12),
                             Expanded(
                               child: Text(
-                                'Professional Experience',
+                                AppStrings.resumeExperienceTitle,
                                 style: Theme.of(context).textTheme.titleLarge
                                     ?.copyWith(
                                       fontWeight: FontWeight.bold,
@@ -73,10 +74,7 @@ class Buildresumedetalis extends StatelessWidget {
                                     ),
                               ),
                             ),
-                          ],
-                        ),
-                        SizedBox(height: AppSizes.h12),
-                        Wrap(
+                             Wrap(
                           crossAxisAlignment: WrapCrossAlignment.center,
                           spacing: AppSizes.w8,
                           runSpacing: AppSizes.h8,
@@ -99,7 +97,7 @@ class Buildresumedetalis extends StatelessWidget {
                               visualDensity: VisualDensity.compact,
                             ),
                             Text(
-                              'Cv',
+                              AppStrings.resumeCvLabel,
                               style: TextStyle(
                                 color: PortfolioColors.golden,
                                 fontSize: AppSizes.sp16,
@@ -107,6 +105,10 @@ class Buildresumedetalis extends StatelessWidget {
                             ),
                           ],
                         ),
+                          ],
+                        ),
+                        SizedBox(height: AppSizes.h12),
+
                       ],
                     )
                   : Row(
@@ -120,7 +122,7 @@ class Buildresumedetalis extends StatelessWidget {
                         SizedBox(width: AppSizes.w16),
                         Expanded(
                           child: Text(
-                            'Professional Experience',
+                            AppStrings.resumeExperienceTitle,
                             style: Theme.of(context).textTheme.titleLarge
                                 ?.copyWith(
                                   fontWeight: FontWeight.bold,
@@ -147,7 +149,7 @@ class Buildresumedetalis extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              'Cv',
+                              AppStrings.resumeCvLabel,
                               style: TextStyle(
                                 color: PortfolioColors.golden,
                                 fontSize: AppSizes.sp16,
@@ -160,63 +162,69 @@ class Buildresumedetalis extends StatelessWidget {
               SizedBox(height: verticalSpacing),
               defaultitemskills(
                 context,
-                'Statemanagement',
-                ' Provider',
-                ' Bloc_cubit',
-                ' ',
-              ),
-              SizedBox(height: verticalSpacing),
-              defaultitemskills(context, 'APIs', ' RESTful', ' ', ' '),
-              SizedBox(height: verticalSpacing),
-              defaultitemskills(
-                context,
-                'Local storage',
-                ' Hive ',
-                ' Shared preferences',
+                AppStrings.skillStateManagement,
+                AppStrings.skillProvider,
+                AppStrings.skillBlocCubit,
                 ' ',
               ),
               SizedBox(height: verticalSpacing),
               defaultitemskills(
                 context,
-                'Firebase',
-                ' Authentication',
-                ' cloud firestore',
-                ' Storage',
+                AppStrings.skillApis,
+                AppStrings.skillRestful,
+                ' ',
+                ' ',
               ),
               SizedBox(height: verticalSpacing),
               defaultitemskills(
                 context,
-                'Flutter Developer',
-                ' Flutter Developer',
-                ' Flutter Developer',
-                ' Flutter Developer',
+                AppStrings.skillLocalStorage,
+                AppStrings.skillHive,
+                AppStrings.skillSharedPreferences,
+                ' ',
               ),
               SizedBox(height: verticalSpacing),
               defaultitemskills(
                 context,
-                'Flutter Developer',
-                ' Flutter Developer',
-                ' Flutter Developer',
-                ' Flutter Developer',
+                AppStrings.skillFirebase,
+                AppStrings.skillAuthentication,
+                AppStrings.skillCloudFirestore,
+                AppStrings.skillStorage,
               ),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'Themes'),
+              defaultitemskills(
+                context,
+                AppStrings.skillFlutterDeveloper,
+                ' ${AppStrings.skillFlutterDeveloper}',
+                ' ${AppStrings.skillFlutterDeveloper}',
+                ' ${AppStrings.skillFlutterDeveloper}',
+              ),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'localization'),
+              defaultitemskills(
+                context,
+                AppStrings.skillFlutterDeveloper,
+                ' ${AppStrings.skillFlutterDeveloper}',
+                ' ${AppStrings.skillFlutterDeveloper}',
+                ' ${AppStrings.skillFlutterDeveloper}',
+              ),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'responsive design'),
+              onlyrowiteminskills(context, AppStrings.skillThemes),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'animations'),
+              onlyrowiteminskills(context, AppStrings.skillLocalization),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'agile'),
+              onlyrowiteminskills(context, AppStrings.skillResponsiveDesign),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'data structure'),
+              onlyrowiteminskills(context, AppStrings.skillAnimations),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'solid'),
+              onlyrowiteminskills(context, AppStrings.skillAgile),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'clean code'),
+              onlyrowiteminskills(context, AppStrings.skillDataStructure),
               SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, 'ci/cd'),
+              onlyrowiteminskills(context, AppStrings.skillSolid),
+              SizedBox(height: verticalSpacing),
+              onlyrowiteminskills(context, AppStrings.skillCleanCode),
+              SizedBox(height: verticalSpacing),
+              onlyrowiteminskills(context, AppStrings.skillCiCd),
             ],
           ),
         );

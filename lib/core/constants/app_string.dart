@@ -1,0 +1,400 @@
+class ProjectStrings {
+  const ProjectStrings._();
+
+  static const List<String> routexImages = [
+    'screen_shots/routex_app/screenShots/1.PNG',
+    'screen_shots/routex_app/screenShots/2.PNG',
+    'screen_shots/routex_app/screenShots/3.PNG',
+    'screen_shots/routex_app/screenShots/4.PNG',
+    'screen_shots/routex_app/screenShots/5.PNG',
+    'screen_shots/routex_app/screenShots/6.PNG',
+    'screen_shots/routex_app/screenShots/7.PNG',
+    'screen_shots/routex_app/screenShots/8.PNG',
+    'screen_shots/routex_app/screenShots/9.PNG',
+    'screen_shots/routex_app/screenShots/10.PNG',
+  ];
+
+  static const List<String> itLegendImages = [
+    'screen_shots/it_legend_task/1.PNG',
+    'screen_shots/it_legend_task/2.PNG',
+    'screen_shots/it_legend_task/3.PNG',
+    'screen_shots/it_legend_task/4.PNG',
+    'screen_shots/it_legend_task/5.PNG',
+    'screen_shots/it_legend_task/6.PNG',
+  ];
+
+  static const List<String> tamTamImages = [
+    'screen_shots/tamtam_app/1.PNG',
+    'screen_shots/tamtam_app/2.PNG',
+    'screen_shots/tamtam_app/3.PNG',
+    'screen_shots/tamtam_app/4.PNG',
+    'screen_shots/tamtam_app/5.PNG',
+    'screen_shots/tamtam_app/6.PNG',
+    'screen_shots/tamtam_app/7.PNG',
+    'screen_shots/tamtam_app/8.PNG',
+    'screen_shots/tamtam_app/9.PNG',
+    'screen_shots/tamtam_app/10.PNG',
+    'screen_shots/tamtam_app/11.PNG',
+    'screen_shots/tamtam_app/12.PNG',
+    'screen_shots/tamtam_app/13.PNG',
+    'screen_shots/tamtam_app/14.PNG',
+    'screen_shots/tamtam_app/15.PNG',
+  ];
+
+  static const List<String> ecommerceImages = [
+    'screen_shots/ecommerce_app/ecommerce1.PNG',
+    'screen_shots/ecommerce_app/e2.PNG',
+    'screen_shots/ecommerce_app/e3.PNG',
+    'screen_shots/ecommerce_app/e4.PNG',
+    'screen_shots/ecommerce_app/e5.PNG',
+    'screen_shots/ecommerce_app/e6.PNG',
+  ];
+
+  static const String routexTitle = 'RouteX Fleet Management';
+  static const String routexShortDescription =
+      'Fleet and shipment management app for drivers and warehouse teams.';
+  static const String routexLongDescription =
+      'A multi-role logistics application built with Flutter to manage orders, warehouse inventory, shipment workflows, notifications, and Arabic-first user flows through a modern structured architecture.';
+  static const List<String> routexTechnologies = [
+    'Flutter',
+    'flutter_bloc',
+    'Equatable',
+    'go_router',
+    'flutter_svg',
+    'Google Fonts',
+  ];
+  static const List<String> routexFeatures = [
+    'Driver dashboard for available and current orders',
+    'Warehouse inventory, shipments, and QR-based operations',
+    'Authentication, profile settings, notifications, and Arabic support',
+  ];
+
+  static const String itLegendTitle = 'IT Legend Task';
+  static const String itLegendShortDescription =
+      'Ads, products, and booking experience with a clean modular UI.';
+  static const String itLegendLongDescription =
+      'A Flutter task project focused on managing ads, presenting products, and handling service booking flows with reusable widgets, Bloc state management, and local SQLite-backed data handling.';
+  static const List<String> itLegendTechnologies = [
+    'Flutter',
+    'flutter_bloc',
+    'SQLite',
+    'Equatable',
+    'Tajawal',
+  ];
+  static const List<String> itLegendFeatures = [
+    'Ads and products presentation with reusable UI cards',
+    'Structured feature folders with core and feature layers',
+    'Booking-oriented flows with tabs, filters, and local persistence',
+  ];
+
+  static const String tamTamTitle = 'TamTam';
+  static const String tamTamShortDescription =
+      'Firebase-powered Flutter app with a rich multi-screen mobile flow.';
+  static const String tamTamLongDescription =
+      'A polished Flutter mobile project backed by Firebase and designed around a dense multi-screen journey, with extensive UI coverage and real app-style navigation demonstrated through the included screenshots.';
+  static const List<String> tamTamTechnologies = [
+    'Flutter',
+    'Firebase',
+    'Cloud Firestore',
+    'Responsive UI',
+    'Multi-screen Navigation',
+  ];
+  static const List<String> tamTamFeatures = [
+    'Extensive end-to-end mobile screen flow',
+    'Firebase integration and app-level configuration',
+    'High-volume UI coverage showcased through real screenshots',
+  ];
+
+  static const String ecommerceTitle = 'E-Commerce App';
+  static const String ecommerceShortDescription =
+      'Flutter e-commerce app with Firebase, DI, and reusable storefront widgets.';
+  static const String ecommerceLongDescription =
+      'A shopping application built around authentication, categories, brands, dependency injection, API-ready services, reusable UI widgets, and responsive storefront flows using Flutter and Firebase.';
+  static const List<String> ecommerceTechnologies = [
+    'Flutter',
+    'Firebase Auth',
+    'Cloud Firestore',
+    'flutter_bloc',
+    'Dio',
+    'GetIt',
+    'Injectable',
+    'ScreenUtil',
+  ];
+  static const List<String> ecommerceFeatures = [
+    'Authentication and commerce-oriented UI flows',
+    'Service locator and dependency injection setup',
+    'Reusable sliders, text fields, and storefront widgets',
+  ];
+
+  static const String ecommerceFirebaseTitle = 'ECommerce Firebase';
+  static const String ecommerceFirebaseShortDescription =
+      'Flutter e-commerce app connected to Firebase and the Route API.';
+  static const String ecommerceFirebaseLongDescription =
+      'A layered Flutter commerce application that combines Firebase authentication and cart storage with Route API product data, dependency injection, Cubit state management, and a clean-architecture-inspired structure.';
+  static const List<String> ecommerceFirebaseTechnologies = [
+    'Flutter',
+    'Firebase Core',
+    'Firebase Auth',
+    'Cloud Firestore',
+    'flutter_bloc',
+    'Dio',
+    'GetIt',
+    'Injectable',
+    'ScreenUtil',
+  ];
+  static const List<String> ecommerceFirebaseFeatures = [
+    'Login, register, categories, products, and cart flow',
+    'Firestore-backed cart storage per user',
+    'Layered architecture with data source, repository, use case, and Cubit',
+  ];
+
+  static const String productCleanTitle = 'Product Clean Architecture';
+  static const String productCleanShortDescription =
+      'Product feature module demonstrating clean architecture with Retrofit and Cubit.';
+  static const String productCleanLongDescription =
+      'An architecture-focused Flutter project built to demonstrate remote product APIs, mappers, repository contracts, use cases, entity separation, dependency injection, and Cubit-driven presentation logic.';
+  static const List<String> productCleanTechnologies = [
+    'Flutter',
+    'Injectable',
+    'GetIt',
+    'Bloc',
+    'Equatable',
+    'Retrofit',
+    'Json Serializable',
+  ];
+  static const List<String> productCleanFeatures = [
+    'Product API client and remote data source contracts',
+    'Repository, entity, mapper, and use case layers',
+    'Cubit-based presentation for product screens',
+  ];
+
+  static const String whatsAppTitle = 'Whats App Clone';
+  static const String whatsAppShortDescription =
+      'Chat app with Firebase auth, Firestore, maps, and profile/location flows.';
+  static const String whatsAppLongDescription =
+      'A communication-focused Flutter project that combines Firebase authentication, Firestore-backed data, chat tabs, archive flows, reusable components, map integration, and profile/location-related screens.';
+  static const List<String> whatsAppTechnologies = [
+    'Flutter',
+    'Firebase Core',
+    'Firebase Auth',
+    'Cloud Firestore',
+    'Firebase Storage',
+    'flutter_bloc',
+    'Provider',
+    'Google Maps',
+  ];
+  static const List<String> whatsAppFeatures = [
+    'Sign in and sign up flows with Firebase',
+    'Chat, archive, profile, and presentation tabs',
+    'Location and map-ready integration',
+  ];
+
+  static const String todoTitle = 'Todo App';
+  static const String todoShortDescription =
+      'Task management app with Firebase, Hive, onboarding, and local persistence.';
+  static const String todoLongDescription =
+      'A productivity application built around daily task management, combining Firebase services with Hive local storage, onboarding flows, reusable widgets, localization support, and Provider-based state management.';
+  static const List<String> todoTechnologies = [
+    'Flutter',
+    'Firebase Auth',
+    'Cloud Firestore',
+    'Provider',
+    'Hive',
+    'Shared Preferences',
+    'Lottie',
+  ];
+  static const List<String> todoFeatures = [
+    'Task creation, editing, and task item flows',
+    'Splash, onboarding, and tab-based navigation',
+    'Cloud and local persistence together',
+  ];
+
+  static const String newsTitle = 'News App';
+  static const String newsShortDescription =
+      'Category-based news app with source tabs, article lists, and remote API loading.';
+  static const String newsLongDescription =
+      'A Flutter news browsing application built around categories, source tabs, article feeds, API services, loading states, and formatted article publishing times in a simple mobile-first experience.';
+  static const List<String> newsTechnologies = [
+    'Flutter',
+    'Dart',
+    'HTTP',
+    'timeago',
+  ];
+  static const List<String> newsFeatures = [
+    'Category grid and category detail flow',
+    'Source tabs and article list screens',
+    'Loading and error indicator widgets',
+  ];
+
+  static const String realEstateTitle = 'Real Estate App';
+  static const String realEstateShortDescription =
+      'Responsive real estate showcase with banners, projects, recommendations, and side menu content.';
+  static const String realEstateLongDescription =
+      'A responsive Flutter showcase project designed around home banners, project cards, recommendation widgets, contact sections, and a structured side menu experience for a real-estate style presentation.';
+  static const List<String> realEstateTechnologies = [
+    'Flutter',
+    'Responsive Layout',
+    'flutter_svg',
+  ];
+  static const List<String> realEstateFeatures = [
+    'Banner, projects, and recommendation sections',
+    'Responsive layout handling across screen sizes',
+    'Contact widgets and side menu presentation',
+  ];
+
+  static const String doctorTitle = 'Doctor Appointment App';
+  static const String doctorShortDescription =
+      'Healthcare app with doctor/patient auth flows and Firebase integration.';
+  static const String doctorLongDescription =
+      'A medical booking-oriented Flutter application that includes separate doctor and patient authentication flows, landing and welcome screens, Firebase-backed logic, and reusable healthcare-themed widgets.';
+  static const List<String> doctorTechnologies = [
+    'Flutter',
+    'Firebase Core',
+    'Firebase Auth',
+    'Cloud Firestore',
+    'flutter_bloc',
+    'smooth_page_indicator',
+  ];
+  static const List<String> doctorFeatures = [
+    'Doctor and patient login/register flows',
+    'Landing and presentation screens',
+    'Firebase functions and reusable form widgets',
+  ];
+
+  static const String portfolioTitle = 'Portfolio Website App';
+  static const String portfolioShortDescription =
+      'Personal Flutter portfolio presenting profile, resume, projects, and contact links.';
+  static const String portfolioLongDescription =
+      'A personal branding project built with Flutter to showcase experience, resume details, featured GitHub projects, responsive layouts, social links, and downloadable CV access in one place.';
+  static const List<String> portfolioTechnologies = [
+    'Flutter',
+    'ScreenUtil',
+    'Responsive UI',
+    'url_launcher',
+    'Syncfusion PDF Viewer',
+  ];
+  static const List<String> portfolioFeatures = [
+    'About, resume, portfolio, and contact tabs',
+    'Real project cards with screenshots and links',
+    'Responsive layout support across screen sizes',
+  ];
+}
+
+class AppStrings {
+  const AppStrings._();
+
+  static const String tabAbout = 'About';
+  static const String tabResume = 'Resume';
+  static const String tabPortfolio = 'Portfolio';
+  static const String tabContact = 'Contact';
+
+  static const String profileName = 'Saad Gawesh';
+  static const String profileRole = 'Flutter Developer';
+  static const String profileEmailTitle = 'Email';
+  static const String profileEmailValue = 'saadgawesg608@gmail.com';
+  static const String profilePhoneTitle = 'Phone';
+  static const String profilePhoneValue = '+20/1031214881';
+  static const String profileBirthdayTitle = 'Birthday';
+  static const String profileBirthdayValue = '12/3/1991';
+  static const String profileLocationTitle = 'Location';
+  static const String profileLocationValue = 'Egypt';
+
+  static const String aboutTitle = 'About Me';
+  static const String aboutDescription =
+      'Passionate Flutter developer with +2 years of experience in mobile app development. I specialize in creating beautiful, performant cross-platform applications that deliver exceptional user experiences. My expertise includes state management, API integration, and implementing modern UI/UX designs.';
+
+  static const String skillsTitle = 'Skills & Services';
+  static const List<Map<String, String>> skills = [
+    {
+      'title': 'Mobile Development',
+      'subtitle': 'Flutter & Dart',
+    },
+    {
+      'title': 'API Integration',
+      'subtitle': 'REST',
+    },
+    {
+      'title': 'UI/UX Design',
+      'subtitle': 'Modern Interfaces',
+    },
+    {
+      'title': 'Backend Services',
+      'subtitle': 'Firebase',
+    },
+  ];
+
+  static const String contactTitle = 'Contact';
+  static const String contactDescription =
+      'Reach out through any of the links below.';
+  static const String contactGithub = 'Open GitHub';
+  static const String contactWhatsapp = 'Open WhatsApp';
+  static const String contactEmail = 'Send Email';
+  static const String contactFacebook = 'Open Facebook';
+  static const String githubUrl = 'https://github.com/saaadgawesh';
+  static const String facebookUrl = 'https://facebook.com/saadgawesh';
+  static const String whatsappNumber = '201031214881';
+  static const String emailAddress = 'saadgawesh608@gmail.com';
+
+  static const String portfolioHeaderTitle = 'Featured Projects';
+  static const String portfolioHeaderDescription =
+      'A curated collection of apps that showcase UI quality, architecture and real product-focused features.';
+  static const String statsProjects = 'Projects';
+  static const String statsCategories = 'Categories';
+  static const String statsMainStack = 'Main Stack';
+  static const String statsMainStackValue = 'Flutter';
+
+  static const String projectRoleLabel = 'Role';
+  static const String projectTechnologiesTitle = 'Technologies';
+  static const String projectHighlightsTitle = 'Highlights';
+  static const String projectGithubButton = 'GitHub';
+
+  static const String recommendationTitle = 'Recommendations';
+  static const List<Map<String, String>> recommendations = [
+    {
+      'name': 'John Doe',
+      'position': 'Senior Developer at Tech Corp',
+      'text':
+          'Outstanding developer with excellent problem-solving skills. Delivered high-quality Flutter applications consistently.',
+    },
+    {
+      'name': 'Sarah Smith',
+      'position': 'Project Manager at StartupXYZ',
+      'text':
+          'Great team player and communicator. Always meets deadlines and produces clean, maintainable code.',
+    },
+    {
+      'name': 'Mike Johnson',
+      'position': 'Tech Lead at Innovation Inc',
+      'text':
+          'Highly skilled in Flutter development. Quick learner and adapts well to new technologies and frameworks.',
+    },
+  ];
+
+  static const String resumeTitle = 'Resume Details';
+  static const String resumeExperienceTitle = 'Professional Experience';
+  static const String resumeCvLabel = 'CV';
+  static const String pdfTitle = 'CV';
+
+  static const String skillStateManagement = 'Statemanagement';
+  static const String skillApis = 'APIs';
+  static const String skillLocalStorage = 'Local storage';
+  static const String skillFirebase = 'Firebase';
+  static const String skillFlutterDeveloper = 'Flutter Developer';
+  static const String skillProvider = ' Provider';
+  static const String skillBlocCubit = ' Bloc_cubit';
+  static const String skillRestful = ' RESTful';
+  static const String skillHive = ' Hive ';
+  static const String skillSharedPreferences = ' Shared preferences';
+  static const String skillAuthentication = ' Authentication';
+  static const String skillCloudFirestore = ' cloud firestore';
+  static const String skillStorage = ' Storage';
+  static const String skillThemes = 'Themes';
+  static const String skillLocalization = 'localization';
+  static const String skillResponsiveDesign = 'responsive design';
+  static const String skillAnimations = 'animations';
+  static const String skillAgile = 'agile';
+  static const String skillDataStructure = 'data structure';
+  static const String skillSolid = 'solid';
+  static const String skillCleanCode = 'clean code';
+  static const String skillCiCd = 'ci/cd';
+}

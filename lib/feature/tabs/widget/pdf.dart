@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
@@ -17,7 +18,7 @@ class _PdfButtonState extends State<PdfButton> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(" CV"),
+        title: const Text(AppStrings.pdfTitle),
         titleTextStyle: TextStyle(
           color: PortfolioColors.golden,
           fontSize: AppSizes.sp18,

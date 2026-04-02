@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/data/projects_data.dart';
 import 'package:protfolio/feature/tabs/widget/Profile_card.dart';
@@ -43,7 +44,7 @@ class PortfolioTab extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Featured Projects',
+                              AppStrings.portfolioHeaderTitle,
                               style: Theme.of(
                                 context,
                               ).textTheme.headlineSmall?.copyWith(
@@ -54,7 +55,7 @@ class PortfolioTab extends StatelessWidget {
                             ),
                             SizedBox(height: AppSizes.h10),
                             Text(
-                              'A curated collection of apps that showcase UI quality, architecture and real product-focused features.',
+                              AppStrings.portfolioHeaderDescription,
                               style: Theme.of(
                                 context,
                               ).textTheme.bodyMedium?.copyWith(
@@ -64,53 +65,34 @@ class PortfolioTab extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: AppSizes.h16),
-                            LayoutBuilder(
-                              builder: (context, statConstraints) {
-                                final int columns =
-                                    statConstraints.maxWidth >= 900
-                                        ? 3
-                                        : statConstraints.maxWidth >= 520
-                                        ? 2
-                                        : 1;
-                                final double spacing = AppSizes.w12;
-                                final double totalSpacing =
-                                    spacing * (columns - 1).clamp(0, 10);
-                                final double cardWidth =
-                                    (statConstraints.maxWidth - totalSpacing) /
-                                    columns;
-
-                                return Wrap(
-                                  spacing: spacing,
-                                  runSpacing: AppSizes.h12,
-                                  children: [
-                                    SizedBox(
-                                      width: cardWidth,
-                                      child: _buildStatCard(
-                                        title: 'Projects',
-                                        value: '${portfolioProjects.length}',
-                                        icon: Icons.folder_open,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: cardWidth,
-                                      child: _buildStatCard(
-                                        title: 'Categories',
-                                        value:
-                                            '${portfolioProjects.map((project) => project.category).toSet().length}',
-                                        icon: Icons.dashboard_customize,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: cardWidth,
-                                      child: _buildStatCard(
-                                        title: 'Main Stack',
-                                        value: 'Flutter',
-                                        icon: Icons.flutter_dash,
-                                      ),
-                                    ),
-                                  ],
-                                );
-                              },
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: _buildStatCard(
+                                    title: AppStrings.statsProjects,
+                                    value: '${portfolioProjects.length}',
+                                    icon: Icons.folder_open,
+                                  ),
+                                ),
+                                SizedBox(width: AppSizes.w12),
+                                Expanded(
+                                  child: _buildStatCard(
+                                    title: AppStrings.statsCategories,
+                                    value:
+                                        '${portfolioProjects.map((project) => project.category).toSet().length}',
+                                    icon: Icons.dashboard_customize,
+                                  ),
+                                ),
+                                SizedBox(width: AppSizes.w12),
+                                Expanded(
+                                  child: _buildStatCard(
+                                    title: AppStrings.statsMainStack,
+                                    value: AppStrings.statsMainStackValue,
+                                    icon: Icons.flutter_dash,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -149,11 +131,12 @@ class PortfolioTab extends StatelessWidget {
           SizedBox(height: AppSizes.h12),
           Text(
             value,
-            maxLines: 2,
+            maxLines: 1,
+            textAlign: TextAlign.start,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: Colors.white,
-              fontSize: AppSizes.sp22,
+              fontSize: AppSizes.sp18,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -162,7 +145,7 @@ class PortfolioTab extends StatelessWidget {
             title,
             style: TextStyle(
               color: PortfolioColors.grayLighter,
-              fontSize: AppSizes.sp14,
+              fontSize: AppSizes.sp12,
             ),
           ),
         ],

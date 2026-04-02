@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/widget/recommendations_list.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -24,7 +25,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
         Padding(
           padding: EdgeInsets.only(left: AppSizes.w4, bottom: AppSizes.h12),
           child: Text(
-            'Recommendations',
+            AppStrings.recommendationTitle,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.bold,
               color: Colors.white,

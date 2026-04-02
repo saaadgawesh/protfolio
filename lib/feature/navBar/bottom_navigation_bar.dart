@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/screens/aboutme_tab.dart';
 import 'package:protfolio/feature/tabs/screens/contacts_tab.dart';
@@ -41,19 +42,19 @@ class _NavBarState extends State<NavBar> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.info_outline),
-            label: 'About',
+            label: AppStrings.tabAbout,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.description_outlined),
-            label: 'Resume',
+            label: AppStrings.tabResume,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.work_outline),
-            label: 'Portfolio',
+            label: AppStrings.tabPortfolio,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.contact_mail_outlined),
-            label: 'Contact',
+            label: AppStrings.tabContact,
           ),
         ],
       ),

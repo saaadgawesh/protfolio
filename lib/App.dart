@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
-import 'package:protfolio/feature/navBar/Nav_Bar.dart';
+import 'package:protfolio/feature/navBar/bottom_navigation_bar.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

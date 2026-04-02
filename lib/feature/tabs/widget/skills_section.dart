@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 
@@ -11,19 +12,23 @@ class SkillsSection extends StatelessWidget {
     final skills = [
       {
         'icon': Icons.phone_android,
-        'title': 'Mobile Development',
-        'subtitle': 'Flutter & Dart',
+        'title': AppStrings.skills[0]['title']!,
+        'subtitle': AppStrings.skills[0]['subtitle']!,
       },
-      {'icon': Icons.api, 'title': 'API Integration', 'subtitle': 'REST '},
+      {
+        'icon': Icons.api,
+        'title': AppStrings.skills[1]['title']!,
+        'subtitle': AppStrings.skills[1]['subtitle']!,
+      },
       {
         'icon': Icons.design_services,
-        'title': 'UI/UX Design',
-        'subtitle': 'Modern Interfaces',
+        'title': AppStrings.skills[2]['title']!,
+        'subtitle': AppStrings.skills[2]['subtitle']!,
       },
       {
         'icon': Icons.cloud,
-        'title': 'Backend Services',
-        'subtitle': 'Firebase',
+        'title': AppStrings.skills[3]['title']!,
+        'subtitle': AppStrings.skills[3]['subtitle']!,
       },
     ];
 
@@ -44,7 +49,7 @@ class SkillsSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Skills & Services',
+            AppStrings.skillsTitle,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.bold,
               color: Colors.white,

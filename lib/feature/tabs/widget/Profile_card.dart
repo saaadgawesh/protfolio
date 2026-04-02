@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/assets/assetImages.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
 import 'package:protfolio/feature/tabs/widget/profile_card_item.dart';
@@ -19,14 +20,11 @@ class __ProfileCardState extends State<ProfileCard> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final bool useCompactHeader = constraints.maxWidth < 360;
-        final bool useVerticalHeader = constraints.maxWidth < 520;
         final double cardMaxWidth =
             constraints.maxWidth.isFinite ? constraints.maxWidth : 900;
-        final double imageHeight =
-            useCompactHeader ? AppSizes.h84 : AppSizes.h90;
-        final double imageWidth =
-            useCompactHeader ? AppSizes.w72 : AppSizes.w77;
+
+        final double imageHeight = AppSizes.h90;
+        final double imageWidth = AppSizes.w77;
 
         return Center(
           child: ConstrainedBox(
@@ -35,9 +33,7 @@ class __ProfileCardState extends State<ProfileCard> {
               duration: const Duration(milliseconds: 400),
               curve: Curves.easeInOut,
               width: double.infinity,
-              padding: EdgeInsets.all(
-                useVerticalHeader ? AppSizes.r14 : AppSizes.r16,
-              ),
+              padding: EdgeInsets.all(AppSizes.r16),
               decoration: BoxDecoration(
                 color: PortfolioColors.cardDark,
                 borderRadius: BorderRadius.circular(AppSizes.r16),
@@ -51,104 +47,54 @@ class __ProfileCardState extends State<ProfileCard> {
               ),
               child: Column(
                 children: [
-                  useVerticalHeader
-                      ? Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: IconButton(
-                            padding: EdgeInsets.zero,
-                            constraints: const BoxConstraints(),
-                            icon: Icon(
-                              isExpanded
-                                  ? Icons.keyboard_arrow_up
-                                  : Icons.keyboard_arrow_down,
-                              color: PortfolioColors.golden,
-                              size: AppSizes.icon24,
+                  Column(
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          /// الصورة
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(AppSizes.r12),
+                            child: Image.asset(
+                              assetImage.image,
+                              height: imageHeight,
+                              width: imageWidth,
+                              fit: BoxFit.cover,
                             ),
-                            onPressed: () {
-                              setState(() {
-                                isExpanded = !isExpanded;
-                              });
-                            },
                           ),
-                        ),
-                        SizedBox(height: AppSizes.h8),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(AppSizes.r12),
-                          child: Image.asset(
-                            assetImage.image,
-                            height: imageHeight,
-                            width: imageWidth,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        SizedBox(height: AppSizes.h12),
-                        Text(
-                          'Saad Gawesh',
-                          textAlign: TextAlign.center,
-                          style: Theme.of(
-                            context,
-                          ).textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            fontSize: AppSizes.sp20,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(height: AppSizes.h4),
-                        Text(
-                          'Flutter Developer',
-                          textAlign: TextAlign.center,
-                          style: Theme.of(
-                            context,
-                          ).textTheme.bodyMedium?.copyWith(
-                            color: Colors.grey[400],
-                            fontSize: AppSizes.sp14,
-                          ),
-                        ),
-                      ],
-                    )
-                      : Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(AppSizes.r12),
-                              child: Image.asset(
-                                assetImage.image,
-                                height: imageHeight,
-                                width: imageWidth,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            SizedBox(width: AppSizes.w12),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Saad Gawesh',
-                                    style: Theme.of(
-                                      context,
-                                    ).textTheme.headlineSmall?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: AppSizes.sp20,
-                                      color: Colors.white,
-                                    ),
+
+                          SizedBox(width: AppSizes.w12),
+
+                          /// الاسم + الوظيفة
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  AppStrings.profileName,
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.headlineSmall?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: AppSizes.sp20,
+                                    color: Colors.white,
                                   ),
-                                  SizedBox(height: AppSizes.h4),
-                                  Text(
-                                    'Flutter Developer',
-                                    style: Theme.of(
-                                      context,
-                                    ).textTheme.bodyMedium?.copyWith(
-                                      color: Colors.grey[400],
-                                      fontSize: AppSizes.sp14,
-                                    ),
+                                ),
+                                SizedBox(height: AppSizes.h4),
+                                Text(
+                                  AppStrings.profileRole,
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.bodyMedium?.copyWith(
+                                    color: Colors.grey[400],
+                                    fontSize: AppSizes.sp14,
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                            IconButton(
+                          ),
+                          Center(
+                            child: IconButton(
                               icon: Icon(
                                 isExpanded
                                     ? Icons.keyboard_arrow_up
@@ -162,8 +108,17 @@ class __ProfileCardState extends State<ProfileCard> {
                                 });
                               },
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: AppSizes.h10),
+
+                      /// زر القائمة في النص تحت
+                    ],
+                  ),
+
+                  /// 🔽 التفاصيل
                   AnimatedCrossFade(
                     crossFadeState:
                         isExpanded
@@ -176,26 +131,26 @@ class __ProfileCardState extends State<ProfileCard> {
                         defaultdivider(0, 0, 0),
                         SizedBox(height: AppSizes.h10),
                         ProfileCardItem(
-                          title: "Email",
-                          description: "saadgawesg608@gmail.com",
+                          title: AppStrings.profileEmailTitle,
+                          description: AppStrings.profileEmailValue,
                           icon: Icons.message,
                         ),
                         SizedBox(height: AppSizes.h10),
                         ProfileCardItem(
-                          title: "Phone",
-                          description: "+20/1031214881",
+                          title: AppStrings.profilePhoneTitle,
+                          description: AppStrings.profilePhoneValue,
                           icon: Icons.phone,
                         ),
                         SizedBox(height: AppSizes.h10),
                         ProfileCardItem(
-                          title: "Birthday",
-                          description: "12/3/1991",
+                          title: AppStrings.profileBirthdayTitle,
+                          description: AppStrings.profileBirthdayValue,
                           icon: Icons.party_mode,
                         ),
                         SizedBox(height: AppSizes.h10),
                         ProfileCardItem(
-                          title: "location",
-                          description: "Egypt",
+                          title: AppStrings.profileLocationTitle,
+                          description: AppStrings.profileLocationValue,
                           icon: Icons.pin_drop,
                         ),
                         SizedBox(height: AppSizes.h10),

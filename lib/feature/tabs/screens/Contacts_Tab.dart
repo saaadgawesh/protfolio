@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/widget/Profile_card.dart';
 import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
@@ -32,33 +33,33 @@ class Contacttab extends StatelessWidget {
                 SizedBox(
                   width: buttonMaxWidth,
                   child: defaultelevatedbutton(
-                    () => openLink("https://github.com/saaadgawesh"),
+                    () => openLink(AppStrings.githubUrl),
                     Icons.link,
-                    "Open GitHub",
+                    AppStrings.contactGithub,
                   ),
                 ),
                 SizedBox(
                   width: buttonMaxWidth,
                   child: defaultelevatedbutton(
-                    () => openWhatsApp("201031214881"),
+                    () => openWhatsApp(AppStrings.whatsappNumber),
                     Icons.link,
-                    "Open WhatsApp",
+                    AppStrings.contactWhatsapp,
                   ),
                 ),
                 SizedBox(
                   width: buttonMaxWidth,
                   child: defaultelevatedbutton(
-                    () => openEmail("saadgawesh608@gmail.com"),
+                    () => openEmail(AppStrings.emailAddress),
                     Icons.email,
-                    "Send Email",
+                    AppStrings.contactEmail,
                   ),
                 ),
                 SizedBox(
                   width: buttonMaxWidth,
                   child: defaultelevatedbutton(
-                    () => openLink("https://facebook.com/saadgawesh"),
+                    () => openLink(AppStrings.facebookUrl),
                     Icons.facebook,
-                    "Open Facebook",
+                    AppStrings.contactFacebook,
                   ),
                 ),
               ],
@@ -128,7 +129,7 @@ class _ContactHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Contact',
+          AppStrings.contactTitle,
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -137,7 +138,7 @@ class _ContactHeader extends StatelessWidget {
         defaultdivider(AppSizes.h3, 0, AppSizes.w250),
         SizedBox(height: sectionSpacing * 0.75),
         Text(
-          'Reach out through any of the links below.',
+          AppStrings.contactDescription,
           style: Theme.of(
             context,
           ).textTheme.bodyMedium?.copyWith(color: Colors.grey[400]),
