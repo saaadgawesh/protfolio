@@ -1,6 +1,0 @@
-import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
-
-Widget defaultCircleAvatar(BuildContext context) {
-  return CircleAvatar(radius: 5, backgroundColor: PortfolioColors.golden);
-}
