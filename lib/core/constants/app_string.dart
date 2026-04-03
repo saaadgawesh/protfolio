@@ -2,16 +2,16 @@ class ProjectStrings {
   const ProjectStrings._();
 
   static const List<String> routexImages = [
-    'screen_shots/routex_app/screenShots/1.PNG',
-    'screen_shots/routex_app/screenShots/2.PNG',
-    'screen_shots/routex_app/screenShots/3.PNG',
-    'screen_shots/routex_app/screenShots/4.PNG',
-    'screen_shots/routex_app/screenShots/5.PNG',
-    'screen_shots/routex_app/screenShots/6.PNG',
-    'screen_shots/routex_app/screenShots/7.PNG',
-    'screen_shots/routex_app/screenShots/8.PNG',
-    'screen_shots/routex_app/screenShots/9.PNG',
-    'screen_shots/routex_app/screenShots/10.PNG',
+    'screen_shots/routex_app/1.PNG',
+    'screen_shots/routex_app/2.PNG',
+    'screen_shots/routex_app/3.PNG',
+    'screen_shots/routex_app/4.PNG',
+    'screen_shots/routex_app/5.PNG',
+    'screen_shots/routex_app/6.PNG',
+    'screen_shots/routex_app/7.PNG',
+    'screen_shots/routex_app/8.PNG',
+    'screen_shots/routex_app/9.PNG',
+    'screen_shots/routex_app/10.PNG',
   ];
 
   static const List<String> itLegendImages = [
@@ -327,6 +327,44 @@ class ProjectStrings {
     'Payment method handling with Firebase-backed app services',
   ];
 
+  static const String instaCloneTitle = 'Insta App Clone';
+  static const String instaCloneShortDescription =
+      'Instagram-inspired social app with authentication, feed UI, and reusable social components.';
+  static const String instaCloneLongDescription =
+      'A Flutter social media clone project designed around familiar Instagram-style experiences including authentication flow, post-feed presentation, responsive screen composition, and reusable UI building blocks for social features.';
+  static const List<String> instaCloneTechnologies = [
+    'Flutter',
+    'Firebase',
+    'Firebase Auth',
+    'Cloud Firestore',
+    'flutter_bloc',
+    'Responsive UI',
+  ];
+  static const List<String> instaCloneFeatures = [
+    'Authentication and account flow for social app usage',
+    'Feed-inspired UI with reusable social components',
+    'Responsive layouts and structured mobile navigation',
+  ];
+
+  static const String examAppTitle = 'Exam App';
+  static const String examAppShortDescription =
+      'Quiz and exam app for solving questions, tracking answers, and viewing results.';
+  static const String examAppLongDescription =
+      'An educational Flutter application focused on quiz and exam workflows, including question presentation, answer handling, result-oriented feedback, and a user-friendly flow built with reusable widgets and organized state handling.';
+  static const List<String> examAppTechnologies = [
+    'Flutter',
+    'Dart',
+    'flutter_bloc',
+    'Firebase',
+    'Cloud Firestore',
+    'Responsive UI',
+  ];
+  static const List<String> examAppFeatures = [
+    'Question and answer flow for exam sessions',
+    'Structured results and progress-oriented user experience',
+    'Reusable UI with responsive educational screens',
+  ];
+
   static const String portfolioTitle = 'Portfolio Website App';
   static const String portfolioShortDescription =
       'Personal Flutter portfolio presenting profile, resume, projects, and contact links.';
@@ -371,22 +409,10 @@ class AppStrings {
 
   static const String skillsTitle = 'Skills & Services';
   static const List<Map<String, String>> skills = [
-    {
-      'title': 'Mobile Development',
-      'subtitle': 'Flutter & Dart',
-    },
-    {
-      'title': 'API Integration',
-      'subtitle': 'REST',
-    },
-    {
-      'title': 'UI/UX Design',
-      'subtitle': 'Modern Interfaces',
-    },
-    {
-      'title': 'Backend Services',
-      'subtitle': 'Firebase',
-    },
+    {'title': 'Mobile Development', 'subtitle': 'Flutter & Dart'},
+    {'title': 'API Integration', 'subtitle': 'REST'},
+    {'title': 'UI/UX Design', 'subtitle': 'Modern Interfaces'},
+    {'title': 'Backend Services', 'subtitle': 'Firebase'},
   ];
 
   static const String contactTitle = 'Contact';
