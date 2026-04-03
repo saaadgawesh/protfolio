@@ -25,8 +25,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-    - assets/m.pdf
-    - screen_shots/ecommerce_app/
-    - screen_shots/it_legend_task/
-    - screen_shots/routex_app/screenShots/
-    - screen_shots/tamtam_app/
+    - screen_shots/

@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/feature/tabs/widget/Profile_card.dart';
-import 'package:protfolio/feature/tabs/widget/resume_detalis.dart';
+import 'package:protfolio/feature/widget/resume/resume_tab_widgets.dart';
 
-class Resumetab extends StatefulWidget {
+class Resumetab extends StatelessWidget {
   const Resumetab({super.key});
 
-  @override
-  State<Resumetab> createState() => _ResumetabState();
-}
-
-class _ResumetabState extends State<Resumetab> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,15 +28,7 @@ class _ResumetabState extends State<Resumetab> {
                 alignment: Alignment.topCenter,
                 child: ConstrainedBox(
                   constraints: BoxConstraints(maxWidth: maxContentWidth),
-                  child: Column(
-
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const ProfileCard(),
-                      SizedBox(height: AppSizes.h16),
-                      const Buildresumedetalis(),
-                    ],
-                  ),
+                  child: const ResumeContentSection(),
                 ),
               ),
             );

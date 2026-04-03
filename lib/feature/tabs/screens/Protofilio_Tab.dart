@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
-import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
 import 'package:protfolio/feature/tabs/data/projects_data.dart';
-import 'package:protfolio/feature/tabs/widget/Profile_card.dart';
-import 'package:protfolio/feature/tabs/widget/project_card.dart';
+import 'package:protfolio/feature/widget/portfolio/portfolio_tab_widgets.dart';
 
 class PortfolioTab extends StatelessWidget {
   const PortfolioTab({super.key});
@@ -33,72 +30,7 @@ class PortfolioTab extends StatelessWidget {
                     children: [
                       const ProfileCard(),
                       SizedBox(height: AppSizes.h16),
-                      Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(
-                          isTablet ? AppSizes.r20 : AppSizes.r18,
-                        ),
-                        decoration: BoxDecoration(
-                          color: PortfolioColors.cardDark,
-                          borderRadius: BorderRadius.circular(AppSizes.r18),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              AppStrings.portfolioHeaderTitle,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.headlineSmall?.copyWith(
-                                color: Colors.white,
-                                fontSize: AppSizes.sp22,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(height: AppSizes.h10),
-                            Text(
-                              AppStrings.portfolioHeaderDescription,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.bodyMedium?.copyWith(
-                                color: PortfolioColors.grayLighter,
-                                fontSize: AppSizes.sp14,
-                                height: 1.6,
-                              ),
-                            ),
-                            SizedBox(height: AppSizes.h16),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: _buildStatCard(
-                                    title: AppStrings.statsProjects,
-                                    value: '${portfolioProjects.length}',
-                                    icon: Icons.folder_open,
-                                  ),
-                                ),
-                                SizedBox(width: AppSizes.w12),
-                                Expanded(
-                                  child: _buildStatCard(
-                                    title: AppStrings.statsCategories,
-                                    value:
-                                        '${portfolioProjects.map((project) => project.category).toSet().length}',
-                                    icon: Icons.dashboard_customize,
-                                  ),
-                                ),
-                                SizedBox(width: AppSizes.w12),
-                                Expanded(
-                                  child: _buildStatCard(
-                                    title: AppStrings.statsMainStack,
-                                    value: AppStrings.statsMainStackValue,
-                                    icon: Icons.flutter_dash,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                      PortfolioHeaderSection(isTablet: isTablet),
                       SizedBox(height: AppSizes.h16),
                       ...portfolioProjects.map(
                         (project) => ProjectCard(project: project),
@@ -110,47 +42,6 @@ class PortfolioTab extends StatelessWidget {
             );
           },
         ),
-      ),
-    );
-  }
-
-  Widget _buildStatCard({
-    required String title,
-    required String value,
-    required IconData icon,
-  }) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(AppSizes.r12),
-      decoration: BoxDecoration(
-        color: PortfolioColors.cardDarker,
-        borderRadius: BorderRadius.circular(AppSizes.r16),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(icon, color: PortfolioColors.golden, size: AppSizes.icon20),
-          SizedBox(height: AppSizes.h8),
-          Text(
-            value,
-            maxLines: 1,
-            textAlign: TextAlign.start,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: AppSizes.sp16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: AppSizes.h4),
-          Text(
-            title,
-            style: TextStyle(
-              color: PortfolioColors.grayLighter,
-              fontSize: AppSizes.sp11,
-            ),
-          ),
-        ],
       ),
     );
   }

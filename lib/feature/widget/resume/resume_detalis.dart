@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/feature/tabs/widget/default_item_skills.dart';
-import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
-import 'package:protfolio/feature/tabs/widget/pdf.dart';
-import 'package:protfolio/feature/tabs/widget/row_Item_In_skills.dart';
+import 'package:protfolio/core/shared_widgets/default_Divider.dart';
+import 'package:protfolio/core/shared_widgets/default_item_skills.dart';
+import 'package:protfolio/core/shared_widgets/open_link_widgets.dart';
+import 'package:protfolio/core/shared_widgets/row_Item_In_skills.dart';
 
 class Buildresumedetalis extends StatelessWidget {
   const Buildresumedetalis({super.key});
@@ -74,41 +74,36 @@ class Buildresumedetalis extends StatelessWidget {
                                     ),
                               ),
                             ),
-                             Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          spacing: AppSizes.w8,
-                          runSpacing: AppSizes.h8,
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => PdfButton(),
+                            Wrap(
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              spacing: AppSizes.w8,
+                              runSpacing: AppSizes.h8,
+                              children: [
+                                IconButton(
+                                  onPressed: () {
+                                    openLink(AppStrings.cvUrl);
+                                  },
+                                  icon: Icon(
+                                    Icons.download,
+                                    color: PortfolioColors.golden,
+                                    size: AppSizes.icon24,
                                   ),
-                                );
-                              },
-                              icon: Icon(
-                                Icons.download,
-                                color: PortfolioColors.golden,
-                                size: AppSizes.icon24,
-                              ),
-                              padding: EdgeInsets.zero,
-                              constraints: const BoxConstraints(),
-                              visualDensity: VisualDensity.compact,
+                                  padding: EdgeInsets.zero,
+                                  constraints: const BoxConstraints(),
+                                  visualDensity: VisualDensity.compact,
+                                ),
+                                Text(
+                                  AppStrings.resumeCvLabel,
+                                  style: TextStyle(
+                                    color: PortfolioColors.golden,
+                                    fontSize: AppSizes.sp16,
+                                  ),
+                                ),
+                              ],
                             ),
-                            Text(
-                              AppStrings.resumeCvLabel,
-                              style: TextStyle(
-                                color: PortfolioColors.golden,
-                                fontSize: AppSizes.sp16,
-                              ),
-                            ),
-                          ],
-                        ),
                           ],
                         ),
                         SizedBox(height: AppSizes.h12),
-
                       ],
                     )
                   : Row(
@@ -136,11 +131,7 @@ class Buildresumedetalis extends StatelessWidget {
                           children: [
                             IconButton(
                               onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => PdfButton(),
-                                  ),
-                                );
+                                openLink(AppStrings.cvUrl);
                               },
                               icon: Icon(
                                 Icons.download,

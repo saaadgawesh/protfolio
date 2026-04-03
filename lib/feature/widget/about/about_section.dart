@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
+import 'package:protfolio/core/shared_widgets/default_Divider.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});

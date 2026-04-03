@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:protfolio/core/assets/assetImages.dart';
 import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
+import 'package:protfolio/core/shared_widgets/default_Divider.dart';
+import 'package:protfolio/core/shared_widgets/profile_card_item.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/feature/tabs/widget/default_Divider.dart';
-import 'package:protfolio/feature/tabs/widget/profile_card_item.dart';
 
 class ProfileCard extends StatefulWidget {
   const ProfileCard({super.key, this.showExpandable = true});
@@ -24,9 +24,7 @@ class __ProfileCardState extends State<ProfileCard> {
       builder: (context, constraints) {
         final double cardMaxWidth =
             constraints.maxWidth.isFinite ? constraints.maxWidth : 900;
-
-        final double imageHeight = AppSizes.h90;
-        final double imageWidth = AppSizes.w77;
+        final bool isCompact = constraints.maxWidth < 520;
 
         return Center(
           child: ConstrainedBox(
@@ -49,79 +47,59 @@ class __ProfileCardState extends State<ProfileCard> {
               ),
               child: Column(
                 children: [
-                  Column(
+                  Flex(
+                    direction: isCompact ? Axis.vertical : Axis.horizontal,
+                    crossAxisAlignment:
+                        isCompact
+                            ? CrossAxisAlignment.start
+                            : CrossAxisAlignment.center,
                     children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          /// الصورة
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(AppSizes.r12),
-                            child: Image.asset(
-                              assetImage.image,
-                              height: imageHeight,
-                              width: imageWidth,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-
-                          SizedBox(width: AppSizes.w12),
-
-                          /// الاسم + الوظيفة
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  AppStrings.profileName,
-                                  style: Theme.of(
-                                    context,
-                                  ).textTheme.headlineSmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: AppSizes.sp20,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(height: AppSizes.h4),
-                                Text(
-                                  AppStrings.profileRole,
-                                  style: Theme.of(
-                                    context,
-                                  ).textTheme.bodyMedium?.copyWith(
-                                    color: Colors.grey[400],
-                                    fontSize: AppSizes.sp14,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          if (widget.showExpandable)
-                            Center(
-                              child: IconButton(
-                                icon: Icon(
-                                  isExpanded
-                                      ? Icons.keyboard_arrow_up
-                                      : Icons.keyboard_arrow_down,
-                                  color: PortfolioColors.golden,
-                                  size: AppSizes.icon24,
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    isExpanded = !isExpanded;
-                                  });
-                                },
-                              ),
-                            ),
-                        ],
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(AppSizes.r12),
+                        child: Image.asset(
+                          assetImage.image,
+                          height: AppSizes.h90,
+                          width: AppSizes.w77,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-
-                      SizedBox(height: AppSizes.h10),
-
-                      /// زر القائمة في النص تحت
+                      SizedBox(
+                        width: isCompact ? 0 : AppSizes.w12,
+                        height: isCompact ? AppSizes.h12 : 0,
+                      ),
+                      if (isCompact)
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            _ProfileIdentity(),
+                            if (widget.showExpandable)
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: _ExpandButton(
+                                  isExpanded: isExpanded,
+                                  onPressed: () {
+                                    setState(() {
+                                      isExpanded = !isExpanded;
+                                    });
+                                  },
+                                ),
+                              ),
+                          ],
+                        )
+                      else
+                        const Expanded(child: _ProfileIdentity()),
+                      if (!isCompact && widget.showExpandable)
+                        _ExpandButton(
+                          isExpanded: isExpanded,
+                          onPressed: () {
+                            setState(() {
+                              isExpanded = !isExpanded;
+                            });
+                          },
+                        ),
                     ],
                   ),
-
-                  /// 🔽 التفاصيل
+                  SizedBox(height: AppSizes.h10),
                   AnimatedCrossFade(
                     crossFadeState:
                         widget.showExpandable && isExpanded
@@ -166,6 +144,57 @@ class __ProfileCardState extends State<ProfileCard> {
           ),
         );
       },
+    );
+  }
+}
+
+class _ProfileIdentity extends StatelessWidget {
+  const _ProfileIdentity();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          AppStrings.profileName,
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            fontWeight: FontWeight.bold,
+            fontSize: AppSizes.sp20,
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(height: AppSizes.h4),
+        Text(
+          AppStrings.profileRole,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: Colors.grey[400],
+            fontSize: AppSizes.sp14,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ExpandButton extends StatelessWidget {
+  const _ExpandButton({
+    required this.isExpanded,
+    required this.onPressed,
+  });
+
+  final bool isExpanded;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+        color: PortfolioColors.golden,
+        size: AppSizes.icon24,
+      ),
+      onPressed: onPressed,
     );
   }
 }

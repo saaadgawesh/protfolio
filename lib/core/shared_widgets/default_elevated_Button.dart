@@ -22,13 +22,17 @@ Widget defaultelevatedbutton(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Icon(icon, color: PortfolioColors.golden, size: AppSizes.icon24),
-          SizedBox(width: AppSizes.w30),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: AppSizes.sp16,
-              fontWeight: FontWeight.bold,
-              color: PortfolioColors.golden,
+          SizedBox(width: AppSizes.w12),
+          Expanded(
+            child: Text(
+              text,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: AppSizes.sp16,
+                fontWeight: FontWeight.bold,
+                color: PortfolioColors.golden,
+              ),
             ),
           ),
         ],

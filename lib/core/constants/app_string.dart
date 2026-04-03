@@ -50,6 +50,25 @@ class ProjectStrings {
     'screen_shots/ecommerce_app/e6.PNG',
   ];
 
+  static const List<String> portfolioImages = [
+    'screen_shots/protfolio/1.PNG',
+    'screen_shots/protfolio/2.PNG',
+    'screen_shots/protfolio/3.PNG',
+    'screen_shots/protfolio/4.PNG',
+  ];
+
+  static const List<String> realEstateImages = [
+    'screen_shots/real_state/1.PNG',
+    'screen_shots/real_state/2.PNG',
+    'screen_shots/real_state/3.PNG',
+    'screen_shots/real_state/4.PNG',
+    'screen_shots/real_state/5.PNG',
+    'screen_shots/real_state/7.PNG',
+    'screen_shots/real_state/8.PNG',
+    'screen_shots/real_state/9.PNG',
+    'screen_shots/real_state/Capture.PNG',
+  ];
+
   static const String routexTitle = 'RouteX Fleet Management';
   static const String routexShortDescription =
       'Fleet and shipment management app for drivers and warehouse teams.';
@@ -261,6 +280,53 @@ class ProjectStrings {
     'Firebase functions and reusable form widgets',
   ];
 
+  static const String islamiTitle = 'Islami App';
+  static const String islamiShortDescription =
+      'Islamic companion app with Quran, Hadith, prayer, Qibla, and Sebha features.';
+  static const String islamiLongDescription =
+      'A Flutter Islamic app organized with feature-based modules for onboarding, dashboard navigation, Quran and Hadith browsing, prayer-related flows, Qibla direction, Sebha interaction, localized content, and bundled audio/assets for a guided spiritual experience.';
+  static const List<String> islamiTechnologies = [
+    'Flutter',
+    'Dart',
+    'Feature-based Architecture',
+    'Localization',
+    'Audio Assets',
+    'SVG Assets',
+  ];
+  static const List<String> islamiFeatures = [
+    'Onboarding and dashboard entry flow',
+    'Quran, Hadith, prayer, Qibla, and Sebha modules',
+    'Localized content with bundled image, SVG, and audio assets',
+  ];
+
+  static const String uberCloneTitle = 'Uber Clone';
+  static const String uberCloneShortDescription =
+      'Ride-hailing Flutter app with location, driver search, trip summary, and payment flows.';
+  static const String uberCloneLongDescription =
+      'A multi-platform Flutter clone project structured around authentication, tab navigation, live location handling, searching-for-driver states, trip summary, payment method selection, Firebase services, localization, and map-based ride flow building blocks.';
+  static const List<String> uberCloneTechnologies = [
+    'Flutter',
+    'Firebase Auth',
+    'Cloud Firestore',
+    'Firebase Messaging',
+    'Google Maps Flutter',
+    'flutter_map',
+    'Geolocator',
+    'Location',
+    'flutter_bloc',
+    'Provider',
+    'Dio',
+    'Hive',
+    'Injectable',
+    'GetIt',
+    'Localization',
+  ];
+  static const List<String> uberCloneFeatures = [
+    'Authentication, tabs, and ride-oriented navigation flow',
+    'Location tracking, driver search, and trip summary modules',
+    'Payment method handling with Firebase-backed app services',
+  ];
+
   static const String portfolioTitle = 'Portfolio Website App';
   static const String portfolioShortDescription =
       'Personal Flutter portfolio presenting profile, resume, projects, and contact links.';
@@ -327,10 +393,22 @@ class AppStrings {
   static const String contactDescription =
       'Reach out through any of the links below.';
   static const String contactGithub = 'Open GitHub';
+  static const String contactLinkedIn = 'Open LinkedIn';
+  static const String contactCv = 'Open CV';
+  static const String contactCertificates = 'Open Certificates';
+  static const String contactYouTube = 'Open YouTube';
   static const String contactWhatsapp = 'Open WhatsApp';
   static const String contactEmail = 'Send Email';
   static const String contactFacebook = 'Open Facebook';
   static const String githubUrl = 'https://github.com/saaadgawesh';
+  static const String linkedInUrl =
+      'https://www.linkedin.com/in/mohamed-gawish-flutter-developer?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app';
+  static const String cvUrl =
+      'https://drive.google.com/file/d/1jSfCQ0-ZIWN-O6DrUkUZysQt9F4Apr2C/view?usp=drivesdk';
+  static const String certificationsUrl =
+      'https://drive.google.com/drive/folders/1prFpe3XPUKmLJNNMUqLREMCCXgOrhwbD';
+  static const String youtubeUrl =
+      'https://youtube.com/@mohamedgawesh91?si=SL8kxQCvA-26K7Fc';
   static const String facebookUrl = 'https://facebook.com/saadgawesh';
   static const String whatsappNumber = '201031214881';
   static const String emailAddress = 'saadgawesh608@gmail.com';

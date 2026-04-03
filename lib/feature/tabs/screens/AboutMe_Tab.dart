@@ -1,18 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/feature/tabs/widget/Profile_card.dart';
-import 'package:protfolio/feature/tabs/widget/about_section.dart';
-import 'package:protfolio/feature/tabs/widget/recommendation_section.dart';
-import 'package:protfolio/feature/tabs/widget/skills_section.dart';
+import 'package:protfolio/feature/widget/about/about_tab_widgets.dart';
 
-class AboutTab extends StatefulWidget {
+class AboutTab extends StatelessWidget {
   const AboutTab({super.key});
 
-  @override
-  State<AboutTab> createState() => _AboutTabState();
-}
-
-class _AboutTabState extends State<AboutTab> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -41,31 +33,10 @@ class _AboutTabState extends State<AboutTab> {
                     children: [
                       const ProfileCard(),
                       SizedBox(height: verticalSpacing),
-                      if (isWide)
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  const AboutSection(),
-                                  SizedBox(height: verticalSpacing),
-                                  const SkillsSection(),
-                                ],
-                              ),
-                            ),
-                            SizedBox(width: verticalSpacing),
-                            const Expanded(child: RecomendationSection()),
-                          ],
-                        )
-                      else ...[
-                        const AboutSection(),
-                        SizedBox(height: verticalSpacing),
-                        const SkillsSection(),
-                        SizedBox(height: verticalSpacing),
-                        const RecomendationSection(),
-                      ],
+                      AboutContentSection(
+                        isWide: isWide,
+                        verticalSpacing: verticalSpacing,
+                      ),
                     ],
                   ),
                 ),
