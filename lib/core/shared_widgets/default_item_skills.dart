@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/core/constants/appthem.dart';
+import 'package:protfolio/core/utils/app_size.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 Widget defaultitemskills(
@@ -10,6 +10,8 @@ Widget defaultitemskills(
   String text2,
   String text3,
 ) {
+  final details = [text1, text2, text3].where((item) => item.trim().isNotEmpty);
+
   return TimelineTile(
     alignment: TimelineAlign.start,
     lineXY: 0.1,
@@ -25,48 +27,38 @@ Widget defaultitemskills(
     endChild: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            SizedBox(width: AppSizes.w24),
-            Text(
-              text,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: AppSizes.sp18,
-              ),
+        Padding(
+          padding: EdgeInsetsDirectional.only(start: AppSizes.w24),
+          child: Text(
+            text,
+            softWrap: true,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: AppSizes.sp18,
             ),
-          ],
+          ),
         ),
         Padding(
           padding: EdgeInsets.only(left: AppSizes.w30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                ' $text1',
-                style: TextStyle(
-                  color: PortfolioColors.golden,
-                  fontWeight: FontWeight.bold,
-                  fontSize: AppSizes.sp16,
-                ),
-              ),
-              Text(
-                ' $text2',
-                style: TextStyle(
-                  color: PortfolioColors.golden,
-                  fontWeight: FontWeight.bold,
-                  fontSize: AppSizes.sp16,
-                ),
-              ),
-              Text(
-                ' $text3',
-                style: TextStyle(
-                  color: PortfolioColors.golden,
-                  fontWeight: FontWeight.bold,
-                  fontSize: AppSizes.sp16,
-                ),
-              ),
-            ],
+            children:
+                details
+                    .map(
+                      (item) => Padding(
+                        padding: EdgeInsets.only(bottom: AppSizes.h4),
+                        child: Text(
+                          item,
+                          softWrap: true,
+                          style: TextStyle(
+                            color: PortfolioColors.golden,
+                            fontWeight: FontWeight.bold,
+                            fontSize: AppSizes.sp16,
+                          ),
+                        ),
+                      ),
+                    )
+                    .toList(),
           ),
         ),
       ],

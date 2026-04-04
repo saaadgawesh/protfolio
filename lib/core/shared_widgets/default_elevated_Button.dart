@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/core/constants/appthem.dart';
+import 'package:protfolio/core/utils/app_size.dart';
 
 Widget defaultelevatedbutton(
   VoidCallback? onPressed,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/core/shared_widgets/Profile_card.dart';
+import 'package:protfolio/core/utils/app_size.dart';
+import 'package:protfolio/core/shared_widgets/profile_card.dart';
 import 'package:protfolio/feature/widget/resume/resume_detalis.dart';
 
 class ResumeContentSection extends StatelessWidget {

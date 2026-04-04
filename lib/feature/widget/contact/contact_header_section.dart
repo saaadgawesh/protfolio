@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/core/shared_widgets/default_Divider.dart';
+import 'package:protfolio/core/utils/app_size.dart';
+import 'package:protfolio/core/shared_widgets/default_divider.dart';
 
 class ContactHeaderSection extends StatelessWidget {
   const ContactHeaderSection({super.key, required this.sectionSpacing});

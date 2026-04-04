@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/feature/widget/about/about_tab_widgets.dart';
 
 class AboutTab extends StatelessWidget {

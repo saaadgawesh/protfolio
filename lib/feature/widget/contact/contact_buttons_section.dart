@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/core/shared_widgets/default_elevated_Button.dart';
+import 'package:protfolio/core/utils/app_size.dart';
+import 'package:protfolio/core/shared_widgets/default_elevated_button.dart';
 import 'package:protfolio/core/shared_widgets/open_link_widgets.dart';
 
 class ContactButtonsSection extends StatelessWidget {

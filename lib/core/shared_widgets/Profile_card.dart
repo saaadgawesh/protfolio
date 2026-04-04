@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/assets/assetImages.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/assets/asset_images.dart';
+import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/shared_widgets/default_Divider.dart';
+import 'package:protfolio/core/shared_widgets/default_divider.dart';
 import 'package:protfolio/core/shared_widgets/profile_card_item.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/core/utils/app_size.dart';
 
 class ProfileCard extends StatefulWidget {
   const ProfileCard({super.key, this.showExpandable = true});

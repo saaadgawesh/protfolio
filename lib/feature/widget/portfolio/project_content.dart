@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/feature/tabs/model/project_model.dart';
 import 'package:protfolio/core/shared_widgets/open_link_widgets.dart';
 import 'package:protfolio/feature/widget/portfolio/project_info_chip.dart';

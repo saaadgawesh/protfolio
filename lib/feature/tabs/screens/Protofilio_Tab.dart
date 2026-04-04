@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
+import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/feature/tabs/data/projects_data.dart';
 import 'package:protfolio/feature/widget/portfolio/portfolio_tab_widgets.dart';
 

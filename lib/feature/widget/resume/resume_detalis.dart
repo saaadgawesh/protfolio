@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/utils/App_Size.dart';
-import 'package:protfolio/core/shared_widgets/default_Divider.dart';
+import 'package:protfolio/core/utils/app_size.dart';
+import 'package:protfolio/core/shared_widgets/default_divider.dart';
 import 'package:protfolio/core/shared_widgets/default_item_skills.dart';
 import 'package:protfolio/core/shared_widgets/open_link_widgets.dart';
-import 'package:protfolio/core/shared_widgets/row_Item_In_skills.dart';
+import 'package:protfolio/core/shared_widgets/row_item_in_skills.dart';
 
 class Buildresumedetalis extends StatelessWidget {
   const Buildresumedetalis({super.key});
@@ -16,6 +16,7 @@ class Buildresumedetalis extends StatelessWidget {
       builder: (context, constraints) {
         final bool isNarrow = constraints.maxWidth < 520;
         final bool isWide = constraints.maxWidth > 900;
+        final bool useStackedHeader = constraints.maxWidth < 650;
         final double horizontalPadding =
             isNarrow ? AppSizes.w12 : AppSizes.w16;
         final double verticalSpacing =
@@ -51,7 +52,7 @@ class Buildresumedetalis extends StatelessWidget {
                 isWide ? AppSizes.w160 : AppSizes.w130,
               ),
               SizedBox(height: isNarrow ? AppSizes.h6 : AppSizes.h8),
-              isNarrow
+              useStackedHeader
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -74,24 +75,28 @@ class Buildresumedetalis extends StatelessWidget {
                                     ),
                               ),
                             ),
-                            Wrap(
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              spacing: AppSizes.w8,
-                              runSpacing: AppSizes.h8,
+                          ],
+                        ),
+                        SizedBox(height: AppSizes.h12),
+                        InkWell(
+                          onTap: () {
+                            openLink(AppStrings.cvUrl);
+                          },
+                          borderRadius: BorderRadius.circular(AppSizes.r8),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: AppSizes.w4,
+                              vertical: AppSizes.h4,
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
                               children: [
-                                IconButton(
-                                  onPressed: () {
-                                    openLink(AppStrings.cvUrl);
-                                  },
-                                  icon: Icon(
-                                    Icons.download,
-                                    color: PortfolioColors.golden,
-                                    size: AppSizes.icon24,
-                                  ),
-                                  padding: EdgeInsets.zero,
-                                  constraints: const BoxConstraints(),
-                                  visualDensity: VisualDensity.compact,
+                                Icon(
+                                  Icons.download,
+                                  color: PortfolioColors.golden,
+                                  size: AppSizes.icon24,
                                 ),
+                                SizedBox(width: AppSizes.w8),
                                 Text(
                                   AppStrings.resumeCvLabel,
                                   style: TextStyle(
@@ -101,7 +106,7 @@ class Buildresumedetalis extends StatelessWidget {
                                 ),
                               ],
                             ),
-                          ],
+                          ),
                         ),
                         SizedBox(height: AppSizes.h12),
                       ],
