@@ -57,6 +57,16 @@ class ProjectStrings {
     'screen_shots/protfolio/4.PNG',
   ];
 
+  static const List<String> aiChatImages = [
+    'screen_shots/ai_chat/2.PNG',
+    'screen_shots/ai_chat/4.PNG',
+    'screen_shots/ai_chat/4a.PNG',
+    'screen_shots/ai_chat/5.PNG',
+    'screen_shots/ai_chat/ai_chat1.PNG',
+    'screen_shots/ai_chat/ai_chat2.PNG',
+    'screen_shots/ai_chat/ai_chat3.PNG',
+  ];
+
   static const List<String> realEstateImages = [
     'screen_shots/real_state/1.PNG',
     'screen_shots/real_state/2.PNG',
@@ -67,6 +77,37 @@ class ProjectStrings {
     'screen_shots/real_state/8.PNG',
     'screen_shots/real_state/9.PNG',
     'screen_shots/real_state/Capture.PNG',
+  ];
+
+  static const List<String> newsImages = [
+    'screen_shots/news_app/1.PNG',
+    'screen_shots/news_app/2.PNG',
+    'screen_shots/news_app/3.PNG',
+    'screen_shots/news_app/4.PNG',
+    'screen_shots/news_app/5.PNG',
+    'screen_shots/news_app/6.PNG',
+    'screen_shots/news_app/7.PNG',
+    'screen_shots/news_app/8.PNG',
+    'screen_shots/news_app/9.PNG',
+    'screen_shots/news_app/10.PNG',
+  ];
+
+  static const List<String> doctorImages = [
+    'screen_shots/doctor_appointment_app/1.PNG',
+    'screen_shots/doctor_appointment_app/2.PNG',
+    'screen_shots/doctor_appointment_app/3.PNG',
+    'screen_shots/doctor_appointment_app/4.PNG',
+    'screen_shots/doctor_appointment_app/5.PNG',
+    'screen_shots/doctor_appointment_app/6.PNG',
+    'screen_shots/doctor_appointment_app/7.PNG',
+    'screen_shots/doctor_appointment_app/8.PNG',
+  ];
+
+  static const List<String> instaCloneImages = [
+    'screen_shots/insta_app/1.PNG',
+    'screen_shots/insta_app/2.PNG',
+    'screen_shots/insta_app/3.PNG',
+    'screen_shots/insta_app/4.PNG',
   ];
 
   static const String routexTitle = 'RouteX Fleet Management';
@@ -381,6 +422,24 @@ class ProjectStrings {
     'About, resume, portfolio, and contact tabs',
     'Real project cards with screenshots and links',
     'Responsive layout support across screen sizes',
+  ];
+
+  static const String aiChatTitle = 'AI Chat App';
+  static const String aiChatShortDescription =
+      'AI-powered chat experience with polished conversation UI and smart assistant flows.';
+  static const String aiChatLongDescription =
+      'A Flutter chat application designed around modern AI conversation patterns, featuring a clean messaging experience, assistant-style interactions, responsive layouts, and screen flows that focus on usability and a production-ready presentation.';
+  static const List<String> aiChatTechnologies = [
+    'Flutter',
+    'Dart',
+    'Responsive UI',
+    'Chat Interface',
+    'Reusable Widgets',
+  ];
+  static const List<String> aiChatFeatures = [
+    'Modern AI chat screens with assistant and user message flow',
+    'Well-structured reusable UI components for conversation layouts',
+    'Polished mobile-first experience demonstrated through real screenshots',
   ];
 }
 

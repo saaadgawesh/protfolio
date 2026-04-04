@@ -27,7 +27,11 @@ flutter:
     - assets/
     - screen_shots/ecommerce_app/
     - screen_shots/it_legend_task/
+    - screen_shots/ai_chat/
     - screen_shots/protfolio/
     - screen_shots/real_state/
     - screen_shots/routex_app/
     - screen_shots/tamtam_app/
+    - screen_shots/doctor_appointment_app/
+    - screen_shots/insta_app/
+    - screen_shots/news_app/
