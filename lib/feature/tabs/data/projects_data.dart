@@ -178,7 +178,7 @@ const List<ProjectModel> portfolioProjects = [
     liveUrl: 'https://github.com/saaadgawesh/islami_app',
     technologies: ProjectStrings.islamiTechnologies,
     features: ProjectStrings.islamiFeatures,
-    imagePaths: const [],
+    imagePaths: ProjectStrings.islamiImages,
     role: 'Flutter Developer',
     duration: '2025',
     status: 'Completed',

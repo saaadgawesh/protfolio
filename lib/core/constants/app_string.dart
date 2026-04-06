@@ -110,6 +110,19 @@ class ProjectStrings {
     'screen_shots/insta_app/4.PNG',
   ];
 
+  static const List<String> islamiImages = [
+    'screen_shots/islami_app/1.jpg',
+    'screen_shots/islami_app/2.jpg',
+    'screen_shots/islami_app/3.jpg',
+    'screen_shots/islami_app/4.jpg',
+    'screen_shots/islami_app/5.jpg',
+    'screen_shots/islami_app/6.jpg',
+    'screen_shots/islami_app/7.jpg',
+    'screen_shots/islami_app/8.jpg',
+    'screen_shots/islami_app/9.jpg',
+    'screen_shots/islami_app/10.jpg',
+  ];
+
   static const String routexTitle = 'RouteX Fleet Management';
   static const String routexShortDescription =
       'Fleet and shipment management app for drivers and warehouse teams.';
