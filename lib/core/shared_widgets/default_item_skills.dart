@@ -9,8 +9,14 @@ Widget defaultitemskills(
   String text1,
   String text2,
   String text3,
+  {List<String> extraItems = const []}
 ) {
-  final details = [text1, text2, text3].where((item) => item.trim().isNotEmpty);
+  final details = [
+    text1,
+    text2,
+    text3,
+    ...extraItems,
+  ].where((item) => item.trim().isNotEmpty);
 
   return TimelineTile(
     alignment: TimelineAlign.start,

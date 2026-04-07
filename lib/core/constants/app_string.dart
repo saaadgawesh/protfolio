@@ -1,6 +1,8 @@
 class ProjectStrings {
   const ProjectStrings._();
 
+  static const String image = 'assets/1.jpg';
+
   static const List<String> routexImages = [
     'screen_shots/routex_app/1.PNG',
     'screen_shots/routex_app/2.PNG',
@@ -470,8 +472,7 @@ class AppStrings {
   static const String profileEmailValue = 'saadgawesg608@gmail.com';
   static const String profilePhoneTitle = 'Phone';
   static const String profilePhoneValue = '+20/1031214881';
-  static const String profileBirthdayTitle = 'Birthday';
-  static const String profileBirthdayValue = '12/3/1991';
+
   static const String profileLocationTitle = 'Location';
   static const String profileLocationValue = 'Egypt';
 
@@ -547,30 +548,64 @@ class AppStrings {
   ];
 
   static const String resumeTitle = 'Resume Details';
-  static const String resumeExperienceTitle = 'Professional Experience';
-  static const String resumeCvLabel = 'CV';
+  static const String resumeExperienceTitle = 'Tech Stack';
+  static const String resumeCvLabel = 'Flutter';
   static const String pdfTitle = 'CV';
 
-  static const String skillStateManagement = 'Statemanagement';
-  static const String skillApis = 'APIs';
-  static const String skillLocalStorage = 'Local storage';
-  static const String skillFirebase = 'Firebase';
-  static const String skillFlutterDeveloper = 'Flutter Developer';
-  static const String skillProvider = ' Provider';
-  static const String skillBlocCubit = ' Bloc_cubit';
-  static const String skillRestful = ' RESTful';
-  static const String skillHive = ' Hive ';
-  static const String skillSharedPreferences = ' Shared preferences';
-  static const String skillAuthentication = ' Authentication';
-  static const String skillCloudFirestore = ' cloud firestore';
-  static const String skillStorage = ' Storage';
-  static const String skillThemes = 'Themes';
-  static const String skillLocalization = 'localization';
-  static const String skillResponsiveDesign = 'responsive design';
-  static const String skillAnimations = 'animations';
-  static const String skillAgile = 'agile';
-  static const String skillDataStructure = 'data structure';
-  static const String skillSolid = 'solid';
-  static const String skillCleanCode = 'clean code';
-  static const String skillCiCd = 'ci/cd';
+  static const String techStackDescription =
+      'Production-focused Flutter stack covering architecture, state management, backend integration, performance, and real app delivery.';
+
+  static const List<Map<String, dynamic>> resumeTechSections = [
+    {
+      'title': 'Core Flutter',
+      'items': ['Flutter SDK', 'Dart', 'Responsive UI', 'Adaptive Layouts'],
+    },
+    {
+      'title': 'State Management',
+      'items': ['Bloc / Cubit', 'Provider', 'Clean Architecture', 'MVVM'],
+    },
+    {
+      'title': 'Backend & APIs',
+      'items': ['REST APIs', 'Dio', 'HTTP', 'JSON Parsing'],
+    },
+    {
+      'title': 'Firebase & Realtime',
+      'items': [
+        'Firebase Auth',
+        'Cloud Firestore',
+        'Firebase Storage',
+        'Realtime Features',
+      ],
+    },
+    {
+      'title': 'Local Data & Caching',
+      'items': ['Hive', 'Shared Preferences', 'SQLite', 'Offline Handling'],
+    },
+    {
+      'title': 'Maps & Location',
+      'items': ['Google Maps', 'Geolocator', 'Location Services', 'Map Flows'],
+    },
+    {
+      'title': 'Architecture & Tooling',
+      'items': ['GetIt', 'Injectable', 'Repository Pattern', 'Reusable Widgets'],
+    },
+    {
+      'title': 'Quality & Testing',
+      'items': ['Widget Testing', 'Unit Testing', 'Debugging', 'Performance Tuning'],
+    },
+  ];
+
+  static const List<String> resumeAdditionalSkills = [
+    'Push Notifications',
+    'Animations',
+    'Localization',
+    'Themes',
+    'Payment Integration',
+    'Authentication Flows',
+    'Git & GitHub',
+    'CI/CD Basics',
+    'SOLID Principles',
+    'Clean Code',
+    'Agile Workflow',
+  ];
 }

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/utils/app_size.dart';
+import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/shared_widgets/default_divider.dart';
 import 'package:protfolio/core/shared_widgets/default_item_skills.dart';
-import 'package:protfolio/core/shared_widgets/open_link_widgets.dart';
 import 'package:protfolio/core/shared_widgets/row_item_in_skills.dart';
+import 'package:protfolio/core/utils/app_size.dart';
 
 class Buildresumedetalis extends StatelessWidget {
   const Buildresumedetalis({super.key});
@@ -17,10 +16,8 @@ class Buildresumedetalis extends StatelessWidget {
         final bool isNarrow = constraints.maxWidth < 520;
         final bool isWide = constraints.maxWidth > 900;
         final bool useStackedHeader = constraints.maxWidth < 650;
-        final double horizontalPadding =
-            isNarrow ? AppSizes.w12 : AppSizes.w16;
-        final double verticalSpacing =
-            isNarrow ? AppSizes.h12 : AppSizes.h15;
+        final double horizontalPadding = isNarrow ? AppSizes.w12 : AppSizes.w16;
+        final double verticalSpacing = isNarrow ? AppSizes.h12 : AppSizes.h15;
 
         return Container(
           width: double.infinity,
@@ -52,6 +49,14 @@ class Buildresumedetalis extends StatelessWidget {
                 isWide ? AppSizes.w160 : AppSizes.w130,
               ),
               SizedBox(height: isNarrow ? AppSizes.h6 : AppSizes.h8),
+              Text(
+                AppStrings.techStackDescription,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: PortfolioColors.grayLighter,
+                  height: 1.5,
+                ),
+              ),
+              SizedBox(height: AppSizes.h16),
               useStackedHeader
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,45 +73,15 @@ class Buildresumedetalis extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 AppStrings.resumeExperienceTitle,
-                                style: Theme.of(context).textTheme.titleLarge
-                                    ?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.titleLarge?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ],
-                        ),
-                        SizedBox(height: AppSizes.h12),
-                        InkWell(
-                          onTap: () {
-                            openLink(AppStrings.cvUrl);
-                          },
-                          borderRadius: BorderRadius.circular(AppSizes.r8),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: AppSizes.w4,
-                              vertical: AppSizes.h4,
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.download,
-                                  color: PortfolioColors.golden,
-                                  size: AppSizes.icon24,
-                                ),
-                                SizedBox(width: AppSizes.w8),
-                                Text(
-                                  AppStrings.resumeCvLabel,
-                                  style: TextStyle(
-                                    color: PortfolioColors.golden,
-                                    fontSize: AppSizes.sp16,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
                         ),
                         SizedBox(height: AppSizes.h12),
                       ],
@@ -123,27 +98,18 @@ class Buildresumedetalis extends StatelessWidget {
                         Expanded(
                           child: Text(
                             AppStrings.resumeExperienceTitle,
-                            style: Theme.of(context).textTheme.titleLarge
-                                ?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                            style: Theme.of(
+                              context,
+                            ).textTheme.titleLarge?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         Wrap(
                           crossAxisAlignment: WrapCrossAlignment.center,
                           spacing: AppSizes.w4,
                           children: [
-                            IconButton(
-                              onPressed: () {
-                                openLink(AppStrings.cvUrl);
-                              },
-                              icon: Icon(
-                                Icons.download,
-                                color: PortfolioColors.golden,
-                                size: AppSizes.icon24,
-                              ),
-                            ),
                             Text(
                               AppStrings.resumeCvLabel,
                               style: TextStyle(
@@ -156,71 +122,41 @@ class Buildresumedetalis extends StatelessWidget {
                       ],
                     ),
               SizedBox(height: verticalSpacing),
-              defaultitemskills(
-                context,
-                AppStrings.skillStateManagement,
-                AppStrings.skillProvider,
-                AppStrings.skillBlocCubit,
-                ' ',
+              ...AppStrings.resumeTechSections.map((section) {
+                final items =
+                    (section['items'] as List<dynamic>).cast<String>().toList();
+
+                return Padding(
+                  padding: EdgeInsets.only(bottom: verticalSpacing),
+                  child: defaultitemskills(
+                    context,
+                    section['title'] as String,
+                    items.isNotEmpty ? items[0] : '',
+                    items.length > 1 ? items[1] : '',
+                    items.length > 2 ? items[2] : '',
+                    extraItems: items.length > 3 ? items.sublist(3) : const [],
+                  ),
+                );
+              }),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Additional Tools & Practices',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: AppSizes.h12),
+                  ...AppStrings.resumeAdditionalSkills.map(
+                    (skill) => Padding(
+                      padding: EdgeInsets.only(bottom: verticalSpacing),
+                      child: onlyrowiteminskills(context, skill),
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(height: verticalSpacing),
-              defaultitemskills(
-                context,
-                AppStrings.skillApis,
-                AppStrings.skillRestful,
-                ' ',
-                ' ',
-              ),
-              SizedBox(height: verticalSpacing),
-              defaultitemskills(
-                context,
-                AppStrings.skillLocalStorage,
-                AppStrings.skillHive,
-                AppStrings.skillSharedPreferences,
-                ' ',
-              ),
-              SizedBox(height: verticalSpacing),
-              defaultitemskills(
-                context,
-                AppStrings.skillFirebase,
-                AppStrings.skillAuthentication,
-                AppStrings.skillCloudFirestore,
-                AppStrings.skillStorage,
-              ),
-              SizedBox(height: verticalSpacing),
-              defaultitemskills(
-                context,
-                AppStrings.skillFlutterDeveloper,
-                ' ${AppStrings.skillFlutterDeveloper}',
-                ' ${AppStrings.skillFlutterDeveloper}',
-                ' ${AppStrings.skillFlutterDeveloper}',
-              ),
-              SizedBox(height: verticalSpacing),
-              defaultitemskills(
-                context,
-                AppStrings.skillFlutterDeveloper,
-                ' ${AppStrings.skillFlutterDeveloper}',
-                ' ${AppStrings.skillFlutterDeveloper}',
-                ' ${AppStrings.skillFlutterDeveloper}',
-              ),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillThemes),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillLocalization),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillResponsiveDesign),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillAnimations),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillAgile),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillDataStructure),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillSolid),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillCleanCode),
-              SizedBox(height: verticalSpacing),
-              onlyrowiteminskills(context, AppStrings.skillCiCd),
             ],
           ),
         );

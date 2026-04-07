@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/assets/asset_images.dart';
-import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
+import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/shared_widgets/default_divider.dart';
 import 'package:protfolio/core/shared_widgets/profile_card_item.dart';
 import 'package:protfolio/core/utils/app_size.dart';
@@ -57,7 +56,7 @@ class __ProfileCardState extends State<ProfileCard> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(AppSizes.r12),
                         child: Image.asset(
-                          assetImage.image,
+                          ProjectStrings.image,
                           height: AppSizes.h90,
                           width: AppSizes.w77,
                           fit: BoxFit.cover,
@@ -123,12 +122,7 @@ class __ProfileCardState extends State<ProfileCard> {
                           icon: Icons.phone,
                         ),
                         SizedBox(height: AppSizes.h10),
-                        ProfileCardItem(
-                          title: AppStrings.profileBirthdayTitle,
-                          description: AppStrings.profileBirthdayValue,
-                          icon: Icons.party_mode,
-                        ),
-                        SizedBox(height: AppSizes.h10),
+
                         ProfileCardItem(
                           title: AppStrings.profileLocationTitle,
                           description: AppStrings.profileLocationValue,
@@ -178,10 +172,7 @@ class _ProfileIdentity extends StatelessWidget {
 }
 
 class _ExpandButton extends StatelessWidget {
-  const _ExpandButton({
-    required this.isExpanded,
-    required this.onPressed,
-  });
+  const _ExpandButton({required this.isExpanded, required this.onPressed});
 
   final bool isExpanded;
   final VoidCallback onPressed;

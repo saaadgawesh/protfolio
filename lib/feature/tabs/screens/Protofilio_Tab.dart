@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio/core/data/projects_data.dart';
 import 'package:protfolio/core/utils/app_size.dart';
-import 'package:protfolio/feature/tabs/data/projects_data.dart';
 import 'package:protfolio/feature/widget/portfolio/portfolio_tab_widgets.dart';
 
 class PortfolioTab extends StatelessWidget {
@@ -31,6 +31,8 @@ class PortfolioTab extends StatelessWidget {
                       const ProfileCard(),
                       SizedBox(height: AppSizes.h16),
                       PortfolioHeaderSection(isTablet: isTablet),
+                      SizedBox(height: AppSizes.h16),
+                      const WorkExperienceSection(),
                       SizedBox(height: AppSizes.h16),
                       ...portfolioProjects.map(
                         (project) => ProjectCard(project: project),

@@ -6,3 +6,4 @@ export 'project_content.dart';
 export 'project_image_fallback.dart';
 export 'project_image_section.dart';
 export 'project_info_chip.dart';
+export 'work_experience_section.dart';
