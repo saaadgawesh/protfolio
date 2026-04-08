@@ -13,54 +13,64 @@ class ProjectImageSection extends StatefulWidget {
 }
 
 class _ProjectImageSectionState extends State<ProjectImageSection> {
-  late final PageController _pageController;
   int _currentIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController();
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     final images = widget.project.imagePaths;
+    final hasImages = images.isNotEmpty;
+    final currentImage =
+        hasImages ? images[_currentIndex.clamp(0, images.length - 1)] : null;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(AppSizes.r14),
       child: AspectRatio(
         aspectRatio: 16 / 9,
         child:
-            images.isNotEmpty
+            hasImages
                 ? Stack(
-                  alignment: Alignment.bottomCenter,
+                  fit: StackFit.expand,
                   children: [
-                    PageView.builder(
-                      controller: _pageController,
-                      itemCount: images.length,
-                      onPageChanged: (index) {
-                        setState(() {
-                          _currentIndex = index;
-                        });
-                      },
-                      itemBuilder: (context, index) {
-                        return Image.asset(
-                          images[index],
-                          fit: BoxFit.cover,
-                          errorBuilder:
-                              (_, __, ___) => ProjectImageFallback(
-                                title: widget.project.title,
-                                category: widget.project.category,
-                              ),
-                        );
-                      },
+                    ColoredBox(
+                      color: Colors.black,
+                      child: Image.asset(
+                        currentImage!,
+                        key: ValueKey(currentImage),
+                        fit: BoxFit.cover,
+                        errorBuilder:
+                            (_, __, ___) => ProjectImageFallback(
+                              title: widget.project.title,
+                              category: widget.project.category,
+                            ),
+                      ),
                     ),
+                    if (images.length > 1)
+                      Positioned(
+                        left: AppSizes.w12,
+                        child: _ImageNavButton(
+                          icon: Icons.chevron_left_rounded,
+                          onTap: () {
+                            setState(() {
+                              _currentIndex =
+                                  (_currentIndex - 1 + images.length) %
+                                  images.length;
+                            });
+                          },
+                        ),
+                      ),
+                    if (images.length > 1)
+                      Positioned(
+                        right: AppSizes.w12,
+                        child: _ImageNavButton(
+                          icon: Icons.chevron_right_rounded,
+                          onTap: () {
+                            setState(() {
+                              _currentIndex =
+                                  (_currentIndex + 1) % images.length;
+                            });
+                          },
+                        ),
+                      ),
                     if (images.length > 1)
                       Positioned(
                         top: AppSizes.h12,
@@ -86,12 +96,74 @@ class _ProjectImageSectionState extends State<ProjectImageSection> {
                           ),
                         ),
                       ),
+                    if (images.length > 1)
+                      Positioned(
+                        left: AppSizes.w12,
+                        right: AppSizes.w12,
+                        bottom: AppSizes.h12,
+                        child: Wrap(
+                          alignment: WrapAlignment.center,
+                          spacing: AppSizes.w6,
+                          children: List.generate(
+                            images.length,
+                            (index) => GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _currentIndex = index;
+                                });
+                              },
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 180),
+                                width:
+                                    index == _currentIndex
+                                        ? AppSizes.w20
+                                        : AppSizes.w8,
+                                height: AppSizes.h8,
+                                decoration: BoxDecoration(
+                                  color:
+                                      index == _currentIndex
+                                          ? Colors.white
+                                          : Colors.white.withOpacity(0.4),
+                                  borderRadius: BorderRadius.circular(
+                                    AppSizes.r24,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                   ],
                 )
                 : ProjectImageFallback(
                   title: widget.project.title,
                   category: widget.project.category,
                 ),
+      ),
+    );
+  }
+}
+
+class _ImageNavButton extends StatelessWidget {
+  const _ImageNavButton({required this.icon, required this.onTap});
+
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Material(
+        color: Colors.black.withOpacity(0.35),
+        shape: const CircleBorder(),
+        child: InkWell(
+          onTap: onTap,
+          customBorder: const CircleBorder(),
+          child: Padding(
+            padding: EdgeInsets.all(AppSizes.r8),
+            child: Icon(icon, color: Colors.white, size: AppSizes.icon24),
+          ),
+        ),
       ),
     );
   }
