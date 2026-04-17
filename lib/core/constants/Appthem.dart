@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class PortfolioColors {
+class AppColors {
+  AppColors._();
+
   static const Color darkPrimary = Color(0xFF1A1A1A);
   static const Color darkSecondary = Color(0xFF2D2D2D);
   static const Color cardDark = Color(0xFF374151);
@@ -19,52 +21,47 @@ class PortfolioColors {
 
   static ThemeData get darkTheme {
     return ThemeData(
+
       brightness: Brightness.dark,
-      primaryColor: PortfolioColors.golden,
-      scaffoldBackgroundColor: PortfolioColors.white,
-      cardColor: PortfolioColors.cardDark,
-
+      primaryColor: AppColors.golden,
+      scaffoldBackgroundColor: AppColors.darkPrimary,
+      cardColor: AppColors.cardDark,
       colorScheme: const ColorScheme.dark(
-        primary: PortfolioColors.golden,
-        secondary: PortfolioColors.goldenAlt,
-        surface: PortfolioColors.cardDark,
-
-        onPrimary: PortfolioColors.darkPrimary,
-        onSecondary: PortfolioColors.white,
-        onSurface: PortfolioColors.white,
+        primary: AppColors.golden,
+        secondary: AppColors.goldenAlt,
+        surface: AppColors.cardDark,
+        onPrimary: AppColors.darkPrimary,
+        onSecondary: AppColors.white,
+        onSurface: AppColors.white,
       ),
-
       appBarTheme: const AppBarTheme(
-        backgroundColor: PortfolioColors.darkSecondary,
-        foregroundColor: PortfolioColors.white,
+        backgroundColor: AppColors.darkSecondary,
+        foregroundColor: AppColors.white,
         elevation: 0,
         centerTitle: true,
-        iconTheme: IconThemeData(color: PortfolioColors.golden),
+        iconTheme: IconThemeData(color: AppColors.golden),
       ),
-
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: PortfolioColors.golden,
-          foregroundColor: PortfolioColors.darkPrimary,
+          backgroundColor: AppColors.golden,
+          foregroundColor: AppColors.darkPrimary,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         ),
       ),
-
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(foregroundColor: PortfolioColors.golden),
+        style: TextButton.styleFrom(foregroundColor: AppColors.golden),
       ),
-
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: PortfolioColors.cardDark,
+        fillColor: AppColors.cardDark,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: PortfolioColors.grayMedium),
+          borderSide: const BorderSide(color: AppColors.grayMedium),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: PortfolioColors.golden),
+          borderSide: const BorderSide(color: AppColors.golden),
         ),
       ),
     );
@@ -75,89 +72,89 @@ class PortfolioTextStyles {
   static const TextStyle heading1 = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,
-    color: PortfolioColors.white,
+    color: AppColors.white,
   );
 
   static const TextStyle heading2 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600,
-    color: PortfolioColors.golden,
+    color: AppColors.golden,
   );
 
   static const TextStyle heading3 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w600,
-    color: PortfolioColors.white,
+    color: AppColors.white,
   );
 
   static const TextStyle bodyLarge = TextStyle(
     fontSize: 16,
-    color: PortfolioColors.white,
+    color: AppColors.white,
   );
 
   static const TextStyle bodyMedium = TextStyle(
     fontSize: 14,
-    color: PortfolioColors.grayLight,
+    color: AppColors.grayLight,
   );
 
   static const TextStyle bodySmall = TextStyle(
     fontSize: 12,
-    color: PortfolioColors.grayMedium,
+    color: AppColors.grayMedium,
   );
 
   static const TextStyle goldenText = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    color: PortfolioColors.golden,
+    color: AppColors.golden,
   );
 
   static const TextStyle linkText = TextStyle(
     fontSize: 14,
-    color: PortfolioColors.blueLink,
+    color: AppColors.blueLink,
     decoration: TextDecoration.underline,
   );
 }
 
 class PortfolioDecorations {
   static BoxDecoration get defaultCard => BoxDecoration(
-    color: PortfolioColors.cardDark,
-    borderRadius: BorderRadius.circular(12),
-    boxShadow: [
-      BoxShadow(
-        color: Colors.black.withOpacity(0.3),
-        blurRadius: 8,
-        offset: const Offset(0, 4),
-      ),
-    ],
-  );
+        color: AppColors.cardDark,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      );
 
   static BoxDecoration get goldenCard => BoxDecoration(
-    color: PortfolioColors.golden,
-    borderRadius: BorderRadius.circular(12),
-    boxShadow: [
-      BoxShadow(
-        color: PortfolioColors.golden,
-        blurRadius: 8,
-        offset: const Offset(0, 4),
-      ),
-    ],
-  );
+        color: AppColors.golden,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.golden,
+            blurRadius: 8,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      );
 
   static BoxDecoration get darkGradient => const BoxDecoration(
-    gradient: LinearGradient(
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-      colors: [PortfolioColors.darkPrimary, PortfolioColors.darkSecondary],
-    ),
-    borderRadius: BorderRadius.all(Radius.circular(12)),
-  );
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [AppColors.darkPrimary, AppColors.darkSecondary],
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      );
 
   static BoxDecoration get goldenGradient => const BoxDecoration(
-    gradient: LinearGradient(
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-      colors: [PortfolioColors.goldenAlt, PortfolioColors.golden],
-    ),
-    borderRadius: BorderRadius.all(Radius.circular(12)),
-  );
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [AppColors.goldenAlt, AppColors.golden],
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      );
 }

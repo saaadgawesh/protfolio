@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
+import 'package:protfolio/core/constants/appthem.dart';
+import 'package:protfolio/core/shared_widgets/open_link_widgets.dart';
 import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/feature/tabs/model/project_model.dart';
-import 'package:protfolio/core/shared_widgets/open_link_widgets.dart';
 import 'package:protfolio/feature/widget/portfolio/project_info_chip.dart';
 
 class ProjectContent extends StatelessWidget {
@@ -23,6 +23,8 @@ class ProjectContent extends StatelessWidget {
       children: [
         Text(
           project.title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: theme.textTheme.titleLarge?.copyWith(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -33,7 +35,7 @@ class ProjectContent extends StatelessWidget {
         Text(
           project.shortDescription,
           style: theme.textTheme.bodyMedium?.copyWith(
-            color: PortfolioColors.grayLighter,
+            color: AppColors.grayLighter,
             fontSize: AppSizes.sp14,
             height: 1.5,
           ),
@@ -42,7 +44,7 @@ class ProjectContent extends StatelessWidget {
         Text(
           project.longDescription,
           style: theme.textTheme.bodyMedium?.copyWith(
-            color: PortfolioColors.grayLight,
+            color: AppColors.grayLight,
             fontSize: AppSizes.sp13,
             height: 1.6,
           ),
@@ -51,7 +53,7 @@ class ProjectContent extends StatelessWidget {
         Text(
           '${AppStrings.projectRoleLabel}: ${project.role}',
           style: theme.textTheme.bodyMedium?.copyWith(
-            color: PortfolioColors.golden,
+            color: AppColors.golden,
             fontSize: AppSizes.sp14,
             fontWeight: FontWeight.w600,
           ),
@@ -67,18 +69,17 @@ class ProjectContent extends StatelessWidget {
         ),
         SizedBox(height: AppSizes.h8),
         Column(
-          children:
-              project.technologies
-                  .map(
-                    (tech) => Padding(
-                      padding: EdgeInsets.only(bottom: AppSizes.h8),
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: ProjectInfoChip(label: tech),
-                      ),
-                    ),
-                  )
-                  .toList(),
+          children: project.technologies
+              .map(
+                (tech) => Padding(
+                  padding: EdgeInsets.only(bottom: AppSizes.h8),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ProjectInfoChip(label: tech),
+                  ),
+                ),
+              )
+              .toList(),
         ),
         SizedBox(height: AppSizes.h14),
         Text(
@@ -101,7 +102,7 @@ class ProjectContent extends StatelessWidget {
                   child: Icon(
                     Icons.check_circle,
                     size: AppSizes.icon16,
-                    color: PortfolioColors.golden,
+                    color: AppColors.golden,
                   ),
                 ),
                 SizedBox(width: AppSizes.w8),
@@ -109,7 +110,7 @@ class ProjectContent extends StatelessWidget {
                   child: Text(
                     feature,
                     style: theme.textTheme.bodyMedium?.copyWith(
-                      color: PortfolioColors.grayLighter,
+                      color: AppColors.grayLighter,
                       fontSize: AppSizes.sp13,
                     ),
                   ),

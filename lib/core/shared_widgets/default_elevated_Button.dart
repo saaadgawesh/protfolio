@@ -11,7 +11,7 @@ Widget defaultelevatedbutton(
     width: double.infinity,
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: PortfolioColors.cardDark,
+        backgroundColor: AppColors.cardDark,
         padding: EdgeInsets.symmetric(vertical: AppSizes.h16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSizes.r12),
@@ -21,7 +21,7 @@ Widget defaultelevatedbutton(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Icon(icon, color: PortfolioColors.golden, size: AppSizes.icon24),
+          Icon(icon, color: AppColors.golden, size: AppSizes.icon24),
           SizedBox(width: AppSizes.w12),
           Expanded(
             child: Text(
@@ -31,7 +31,7 @@ Widget defaultelevatedbutton(
               style: TextStyle(
                 fontSize: AppSizes.sp16,
                 fontWeight: FontWeight.bold,
-                color: PortfolioColors.golden,
+                color: AppColors.golden,
               ),
             ),
           ),

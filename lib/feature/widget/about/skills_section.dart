@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/utils/app_size.dart';
+import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/shared_widgets/default_divider.dart';
+import 'package:protfolio/core/utils/app_size.dart';
 
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
@@ -35,7 +35,7 @@ class SkillsSection extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(AppSizes.r16),
       decoration: BoxDecoration(
-        color: PortfolioColors.cardDark,
+        color: AppColors.cardDark,
         borderRadius: BorderRadius.circular(AppSizes.r15),
         boxShadow: [
           BoxShadow(
@@ -51,9 +51,9 @@ class SkillsSection extends StatelessWidget {
           Text(
             AppStrings.skillsTitle,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
           ),
           defaultdivider(AppSizes.h3, 0, AppSizes.w120),
           SizedBox(height: AppSizes.h16),
@@ -66,7 +66,7 @@ class SkillsSection extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(AppSizes.r8),
                         decoration: BoxDecoration(
-                          color: PortfolioColors.golden,
+                          color: AppColors.golden,
                           borderRadius: BorderRadius.circular(AppSizes.r8),
                         ),
                         child: Icon(

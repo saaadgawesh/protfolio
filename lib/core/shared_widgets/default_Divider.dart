@@ -3,7 +3,7 @@ import 'package:protfolio/core/constants/appthem.dart';
 
 Widget defaultdivider(double thickness, double indent, double endindent) {
   return Divider(
-    color: PortfolioColors.golden,
+    color: AppColors.golden,
     thickness: thickness,
     indent: indent,
     endIndent: endindent,

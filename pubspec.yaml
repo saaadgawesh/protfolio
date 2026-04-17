@@ -4,7 +4,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.0
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -14,7 +14,6 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^30.2.7
   timeline_tile: ^2.0.0
   url_launcher: ^6.3.2
-  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:
@@ -25,14 +24,14 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-    - screen_shots/ecommerce_app/
-    - screen_shots/it_legend_task/
-    - screen_shots/ai_chat/
-    - screen_shots/protfolio/
-    - screen_shots/real_state/
-    - screen_shots/routex_app/
-    - screen_shots/tamtam_app/
-    - screen_shots/doctor_appointment_app/
-    - screen_shots/insta_app/
-    - screen_shots/islami_app/
-    - screen_shots/news_app/
+    - assets/screen_shots/ecommerce_app/
+    - assets/screen_shots/it_legend_task/
+    - assets/screen_shots/ai_chat/
+    - assets/screen_shots/protfolio/
+    - assets/screen_shots/real_state/
+    - assets/screen_shots/routex_app/
+    - assets/screen_shots/tamtam_app/
+    - assets/screen_shots/doctor_appointment_app/
+    - assets/screen_shots/insta_app/
+    - assets/screen_shots/islami_app/
+    - assets/screen_shots/news_app/

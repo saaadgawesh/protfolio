@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/constants/app_string.dart';
+import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/feature/widget/about/recommendations_list.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -16,7 +16,7 @@ class RecomendationSection extends StatefulWidget {
 // ignore: camel_case_types
 class _RecomendationSectionState extends State<RecomendationSection> {
   final PageController _controller = PageController();
-  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,20 +27,15 @@ class _RecomendationSectionState extends State<RecomendationSection> {
           child: Text(
             AppStrings.recommendationTitle,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
           ),
         ),
         SizedBox(
           height: AppSizes.h180,
           child: PageView.builder(
             controller: _controller,
-            onPageChanged: (value) {
-              setState(() {
-                _currentIndex = value;
-              });
-            },
             physics: const BouncingScrollPhysics(),
             itemCount: recommendations.length,
             itemBuilder: (context, index) {
@@ -49,7 +44,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                 margin: EdgeInsets.only(right: AppSizes.w8),
                 padding: EdgeInsets.all(AppSizes.r16),
                 decoration: BoxDecoration(
-                  color: PortfolioColors.cardDark,
+                  color: AppColors.cardDark,
                   borderRadius: BorderRadius.circular(AppSizes.r15),
                   boxShadow: [
                     BoxShadow(
@@ -66,7 +61,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                       children: [
                         CircleAvatar(
                           radius: AppSizes.r20,
-                          backgroundColor: PortfolioColors.golden,
+                          backgroundColor: AppColors.golden,
                           child: Text(
                             recommendation['name']![0],
                             style: TextStyle(
@@ -83,6 +78,8 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                             children: [
                               Text(
                                 recommendation['name']!,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -91,6 +88,8 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                               ),
                               Text(
                                 recommendation['position']!,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.grey[400],
                                   fontSize: AppSizes.sp12,
@@ -135,7 +134,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
             effect: WormEffect(
               dotHeight: AppSizes.h8,
               dotWidth: AppSizes.w8,
-              activeDotColor: PortfolioColors.golden,
+              activeDotColor: AppColors.golden,
             ),
           ),
         ),
@@ -143,6 +142,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
     );
   }
 
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();

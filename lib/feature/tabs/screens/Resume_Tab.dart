@@ -7,32 +7,23 @@ class Resumetab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: LayoutBuilder(
-          builder: (context, constraints) {
-            final double maxContentWidth = constraints.maxWidth > 1100
-                ? 1000
-                : constraints.maxWidth;
-            final EdgeInsets contentPadding = EdgeInsets.symmetric(
-              horizontal:
-                  constraints.maxWidth < 420 ? AppSizes.w12 : AppSizes.w16,
-              vertical:
-                  constraints.maxWidth < 420 ? AppSizes.h12 : AppSizes.h16,
-            );
+  
 
-            return SingleChildScrollView(
-              padding: contentPadding,
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: maxContentWidth),
-                  child: const ResumeContentSection(),
-                ),
-              ),
-            );
-          },
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSizes.w16,
+          vertical: AppSizes.h16,
+        ),
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Column(
+            children: [
+              const ResumeContentSection(),
+              SizedBox(),
+            ],
+          ),
         ),
       ),
     );

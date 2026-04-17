@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/appthem.dart';
+import 'package:protfolio/core/constants/Appthem.dart';
 import 'package:protfolio/core/data/work_experience_data.dart';
 import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/feature/tabs/model/work_experience_model.dart';
@@ -13,7 +13,7 @@ class WorkExperienceSection extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(AppSizes.r20),
       decoration: BoxDecoration(
-        color: PortfolioColors.cardDark,
+        color: AppColors.cardDark,
         borderRadius: BorderRadius.circular(AppSizes.r18),
       ),
       child: Column(
@@ -31,7 +31,7 @@ class WorkExperienceSection extends StatelessWidget {
           Text(
             'Part-time roles where I shipped real products for healthcare and education use cases.',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: PortfolioColors.grayLighter,
+              color: AppColors.grayLighter,
               fontSize: AppSizes.sp14,
               height: 1.6,
             ),
@@ -61,7 +61,7 @@ class _ExperienceCard extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(AppSizes.r16),
       decoration: BoxDecoration(
-        color: PortfolioColors.cardDarker,
+        color: AppColors.cardDarker,
         borderRadius: BorderRadius.circular(AppSizes.r16),
         border: Border.all(
           color: Colors.white.withOpacity(0.08),
@@ -84,19 +84,19 @@ class _ExperienceCard extends StatelessWidget {
               ),
               _MetaChip(
                 label: experience.employmentType,
-                color: PortfolioColors.golden.withOpacity(0.18),
-                textColor: PortfolioColors.golden,
+                color: AppColors.golden.withOpacity(0.18),
+                textColor: AppColors.golden,
               ),
               _MetaChip(
                 label: experience.status,
                 color:
                     experience.status == 'Current'
-                        ? PortfolioColors.greenActive.withOpacity(0.18)
+                        ? AppColors.greenActive.withOpacity(0.18)
                         : Colors.white.withOpacity(0.08),
                 textColor:
                     experience.status == 'Current'
-                        ? PortfolioColors.greenActive
-                        : PortfolioColors.grayLighter,
+                        ? AppColors.greenActive
+                        : AppColors.grayLighter,
               ),
             ],
           ),
@@ -104,7 +104,7 @@ class _ExperienceCard extends StatelessWidget {
           Text(
             experience.projectTitle,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: PortfolioColors.grayLighter,
+              color: AppColors.grayLighter,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -112,7 +112,7 @@ class _ExperienceCard extends StatelessWidget {
           Text(
             experience.description,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: PortfolioColors.grayLighter,
+              color: AppColors.grayLighter,
               height: 1.6,
             ),
           ),
@@ -137,7 +137,7 @@ class _ExperienceCard extends StatelessWidget {
                     child: Icon(
                       Icons.circle,
                       size: AppSizes.icon16 / 2,
-                      color: PortfolioColors.golden,
+                      color: AppColors.golden,
                     ),
                   ),
                   SizedBox(width: AppSizes.w10),
@@ -204,12 +204,12 @@ class _InfoRow extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(icon, size: AppSizes.icon16, color: PortfolioColors.golden),
+        Icon(icon, size: AppSizes.icon16, color: AppColors.golden),
         SizedBox(width: AppSizes.w6),
         Text(
           text,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: PortfolioColors.grayLighter,
+            color: AppColors.grayLighter,
           ),
         ),
       ],

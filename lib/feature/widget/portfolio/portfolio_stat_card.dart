@@ -20,13 +20,13 @@ class PortfolioStatCard extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(AppSizes.r12),
       decoration: BoxDecoration(
-        color: PortfolioColors.cardDarker,
+        color: AppColors.cardDarker,
         borderRadius: BorderRadius.circular(AppSizes.r16),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: PortfolioColors.golden, size: AppSizes.icon20),
+          Icon(icon, color: AppColors.golden, size: AppSizes.icon20),
           SizedBox(height: AppSizes.h8),
           Text(
             value,
@@ -42,8 +42,10 @@ class PortfolioStatCard extends StatelessWidget {
           SizedBox(height: AppSizes.h4),
           Text(
             title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              color: PortfolioColors.grayLighter,
+              color: AppColors.grayLighter,
               fontSize: AppSizes.sp11,
             ),
           ),

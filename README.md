@@ -1,6 +1,6 @@
 # Protfolio
 
-A responsive Flutter portfolio web app for showcasing profile details, resume highlights, featured projects, and contact links in one place.
+A Flutter portfolio web app for showcasing profile details, resume highlights, featured projects, and contact links in one place.
 
 ## Live Demo
 
@@ -10,7 +10,7 @@ GitHub Pages:
 
 ## Features
 
-- Responsive portfolio layout built with Flutter Web
+- Portfolio layout built with Flutter Web
 - Bottom navigation for About, Resume, Portfolio, and Contact sections
 - Project showcase with screenshots, technologies, and highlights
 - CV, GitHub, LinkedIn, email, WhatsApp, and other contact shortcuts
@@ -20,7 +20,6 @@ GitHub Pages:
 
 - Flutter
 - Dart
-- flutter_screenutil
 - url_launcher
 - smooth_page_indicator
 - syncfusion_flutter_pdfviewer

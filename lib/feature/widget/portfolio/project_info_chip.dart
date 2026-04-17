@@ -15,13 +15,13 @@ class ProjectInfoChip extends StatelessWidget {
         vertical: AppSizes.h8,
       ),
       decoration: BoxDecoration(
-        color: PortfolioColors.cardDarker,
+        color: AppColors.cardDarker,
         borderRadius: BorderRadius.circular(AppSizes.r24),
       ),
       child: Text(
         label,
         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-          color: PortfolioColors.grayLighter,
+          color: AppColors.grayLighter,
           fontSize: AppSizes.sp11,
           fontWeight: FontWeight.w600,
         ),

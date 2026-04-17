@@ -4,13 +4,8 @@ import 'package:protfolio/core/utils/app_size.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 Widget defaultitemskills(
-  BuildContext context,
-  String text,
-  String text1,
-  String text2,
-  String text3,
-  {List<String> extraItems = const []}
-) {
+    BuildContext context, String text, String text1, String text2, String text3,
+    {List<String> extraItems = const []}) {
   final details = [
     text1,
     text2,
@@ -24,10 +19,10 @@ Widget defaultitemskills(
     indicatorStyle: IndicatorStyle(
       indicatorXY: 0.2,
       width: AppSizes.w16,
-      color: PortfolioColors.golden,
+      color: AppColors.golden,
     ),
     beforeLineStyle: LineStyle(
-      color: PortfolioColors.golden,
+      color: AppColors.golden,
       thickness: AppSizes.h3,
     ),
     endChild: Column(
@@ -48,23 +43,22 @@ Widget defaultitemskills(
           padding: EdgeInsets.only(left: AppSizes.w30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:
-                details
-                    .map(
-                      (item) => Padding(
-                        padding: EdgeInsets.only(bottom: AppSizes.h4),
-                        child: Text(
-                          item,
-                          softWrap: true,
-                          style: TextStyle(
-                            color: PortfolioColors.golden,
-                            fontWeight: FontWeight.bold,
-                            fontSize: AppSizes.sp16,
-                          ),
-                        ),
+            children: details
+                .map(
+                  (item) => Padding(
+                    padding: EdgeInsets.only(bottom: AppSizes.h4),
+                    child: Text(
+                      item,
+                      softWrap: true,
+                      style: TextStyle(
+                        color: AppColors.golden,
+                        fontWeight: FontWeight.bold,
+                        fontSize: AppSizes.sp16,
                       ),
-                    )
-                    .toList(),
+                    ),
+                  ),
+                )
+                .toList(),
           ),
         ),
       ],

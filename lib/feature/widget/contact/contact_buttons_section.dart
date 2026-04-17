@@ -7,10 +7,10 @@ import 'package:protfolio/core/shared_widgets/open_link_widgets.dart';
 class ContactButtonsSection extends StatelessWidget {
   const ContactButtonsSection({
     super.key,
-    required this.buttonMaxWidth,
+
   });
 
-  final double buttonMaxWidth;
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,23 +19,23 @@ class ContactButtonsSection extends StatelessWidget {
       runSpacing: AppSizes.h12,
       children: [
         SizedBox(
-          width: buttonMaxWidth,
+         
           child: defaultelevatedbutton(
             () => openLink(AppStrings.githubUrl),
-            Icons.link,
+            Icons.code,
             AppStrings.contactGithub,
           ),
         ),
         SizedBox(
-          width: buttonMaxWidth,
+         
           child: defaultelevatedbutton(
             () => openLink(AppStrings.linkedInUrl),
-            Icons.business_center,
+            Icons.badge,
             AppStrings.contactLinkedIn,
           ),
         ),
         SizedBox(
-          width: buttonMaxWidth,
+         
           child: defaultelevatedbutton(
             () => openLink(AppStrings.cvUrl),
             Icons.picture_as_pdf,
@@ -43,31 +43,31 @@ class ContactButtonsSection extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: buttonMaxWidth,
+         
           child: defaultelevatedbutton(
             () => openLink(AppStrings.certificationsUrl),
-            Icons.workspace_premium,
+            Icons.verified,
             AppStrings.contactCertificates,
           ),
         ),
         SizedBox(
-          width: buttonMaxWidth,
+         
           child: defaultelevatedbutton(
             () => openLink(AppStrings.youtubeUrl),
-            Icons.play_circle_fill,
+            Icons.smart_display,
             AppStrings.contactYouTube,
           ),
         ),
         SizedBox(
-          width: buttonMaxWidth,
+         
           child: defaultelevatedbutton(
             () => openWhatsApp(AppStrings.whatsappNumber),
-            Icons.link,
+            Icons.chat,
             AppStrings.contactWhatsapp,
           ),
         ),
         SizedBox(
-          width: buttonMaxWidth,
+         
           child: defaultelevatedbutton(
             () => openEmail(AppStrings.emailAddress),
             Icons.email,
@@ -75,10 +75,10 @@ class ContactButtonsSection extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: buttonMaxWidth,
+         
           child: defaultelevatedbutton(
             () => openLink(AppStrings.facebookUrl),
-            Icons.facebook,
+            Icons.thumb_up,
             AppStrings.contactFacebook,
           ),
         ),

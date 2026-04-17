@@ -19,7 +19,7 @@ class ProjectImageFallback extends StatelessWidget {
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [PortfolioColors.cardDark, PortfolioColors.darkSecondary],
+          colors: [AppColors.cardDark, AppColors.darkSecondary],
         ),
         borderRadius: BorderRadius.circular(AppSizes.r14),
       ),
@@ -31,13 +31,13 @@ class ProjectImageFallback extends StatelessWidget {
           Icon(
             Icons.phone_android_rounded,
             size: AppSizes.icon42,
-            color: PortfolioColors.golden,
+            color: AppColors.golden,
           ),
           SizedBox(height: AppSizes.h12),
           Text(
             category,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: PortfolioColors.golden,
+              color: AppColors.golden,
               fontSize: AppSizes.sp14,
               fontWeight: FontWeight.w700,
             ),

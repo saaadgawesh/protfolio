@@ -4,9 +4,9 @@ import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/core/shared_widgets/default_divider.dart';
 
 class ContactHeaderSection extends StatelessWidget {
-  const ContactHeaderSection({super.key, required this.sectionSpacing});
+  const ContactHeaderSection({super.key, });
 
-  final double sectionSpacing;
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class ContactHeaderSection extends StatelessWidget {
           ),
         ),
         defaultdivider(AppSizes.h3, 0, AppSizes.w250),
-        SizedBox(height: sectionSpacing * 0.75),
+        SizedBox(height: AppSizes.h12),
         Text(
           AppStrings.contactDescription,
           style: Theme.of(

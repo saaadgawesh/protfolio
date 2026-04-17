@@ -18,7 +18,7 @@ class ProfileCardItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Icon(icon, color: PortfolioColors.golden, size: AppSizes.icon24),
+        Icon(icon, color: AppColors.golden, size: AppSizes.icon24),
         SizedBox(width: AppSizes.w16),
         Expanded(
           child: Column(
@@ -39,7 +39,7 @@ class ProfileCardItem extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: AppSizes.sp18,
-                  color: PortfolioColors.golden,
+                  color: AppColors.golden,
                 ),
               ),
             ],
