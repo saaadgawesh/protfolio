@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/App_them.dart';
 
 import 'package:protfolio/feature/navBar/bottom_navigation_bar.dart';
 
@@ -11,7 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: NavBar(),
-      theme: AppColors.darkTheme,
+      theme: Appthem.darkTheme,
     );
   }
 }

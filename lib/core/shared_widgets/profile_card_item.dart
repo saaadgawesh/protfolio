@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/appthem.dart';
+import 'package:protfolio/core/constants/app_colors.dart';
 import 'package:protfolio/core/utils/app_size.dart';
 
 class ProfileCardItem extends StatelessWidget {

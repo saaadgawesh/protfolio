@@ -1,4 +1,4 @@
-import 'package:protfolio/feature/tabs/model/work_experience_model.dart';
+import 'package:protfolio/core/model/work_experience_model.dart';
 
 const List<WorkExperienceModel> workExperiences = [
   WorkExperienceModel(

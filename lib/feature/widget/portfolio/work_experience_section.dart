@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/Appthem.dart';
+import 'package:protfolio/core/constants/app_colors.dart';
 import 'package:protfolio/core/data/work_experience_data.dart';
 import 'package:protfolio/core/utils/app_size.dart';
-import 'package:protfolio/feature/tabs/model/work_experience_model.dart';
+import 'package:protfolio/core/model/work_experience_model.dart';
 
 class WorkExperienceSection extends StatelessWidget {
   const WorkExperienceSection({super.key});

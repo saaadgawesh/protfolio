@@ -1,5 +1,5 @@
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/feature/tabs/model/project_model.dart';
+import 'package:protfolio/core/model/project_model.dart';
 
 const List<ProjectModel> portfolioProjects = [
   ProjectModel(
@@ -154,7 +154,7 @@ const List<ProjectModel> portfolioProjects = [
     duration: '2026',
     status: 'Completed',
     category: 'Architecture',
-  ), 
+  ),
   ProjectModel(
     title: ProjectStrings.ecommerceTitle,
     shortDescription: ProjectStrings.ecommerceShortDescription,

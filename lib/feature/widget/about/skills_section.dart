@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio/core/constants/app_colors.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/shared_widgets/default_divider.dart';
 import 'package:protfolio/core/utils/app_size.dart';
 

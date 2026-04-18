@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:protfolio/core/constants/appthem.dart';
+import 'package:protfolio/core/constants/app_colors.dart';
 import 'package:protfolio/core/utils/app_size.dart';
-import 'package:protfolio/feature/tabs/model/project_model.dart';
+import 'package:protfolio/core/model/project_model.dart';
 import 'package:protfolio/feature/widget/portfolio/project_content.dart';
 import 'package:protfolio/feature/widget/portfolio/project_image_section.dart';
 

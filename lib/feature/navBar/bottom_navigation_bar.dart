@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio/core/constants/app_colors.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/constants/appthem.dart';
+
 import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/feature/tabs/screens/aboutme_tab.dart';
 import 'package:protfolio/feature/tabs/screens/contacts_tab.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio/core/constants/app_colors.dart';
 import 'package:protfolio/core/constants/app_string.dart';
-import 'package:protfolio/core/constants/appthem.dart';
 import 'package:protfolio/core/utils/app_size.dart';
 import 'package:protfolio/feature/widget/about/recommendations_list.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';

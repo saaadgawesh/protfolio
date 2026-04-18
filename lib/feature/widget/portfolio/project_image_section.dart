@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/core/utils/app_size.dart';
-import 'package:protfolio/feature/tabs/model/project_model.dart';
+import 'package:protfolio/core/model/project_model.dart';
 import 'package:protfolio/feature/widget/portfolio/project_image_fallback.dart';
 
 class ProjectImageSection extends StatefulWidget {
