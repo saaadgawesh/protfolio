@@ -19,6 +19,8 @@ class _RecomendationSectionState extends State<RecomendationSection> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final bool isCompact = MediaQuery.sizeOf(context).width < 700;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -33,7 +35,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
           ),
         ),
         SizedBox(
-          height: AppSizes.h180,
+          height: isCompact ? AppSizes.h150 : AppSizes.h180,
           child: PageView.builder(
             controller: _controller,
             onPageChanged: (value) {
@@ -72,7 +74,7 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: AppSizes.sp16,
+                              fontSize: isCompact ? AppSizes.sp14 : AppSizes.sp16,
                             ),
                           ),
                         ),
@@ -83,17 +85,23 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                             children: [
                               Text(
                                 recommendation['name']!,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: AppSizes.sp16,
+                                  fontSize:
+                                      isCompact ? AppSizes.sp14 : AppSizes.sp16,
                                 ),
                               ),
                               Text(
                                 recommendation['position']!,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   color: Colors.grey[400],
-                                  fontSize: AppSizes.sp12,
+                                  fontSize:
+                                      isCompact ? AppSizes.sp11 : AppSizes.sp12,
                                 ),
                               ),
                             ],
@@ -107,10 +115,10 @@ class _RecomendationSectionState extends State<RecomendationSection> {
                         recommendation['text']!,
                         style: TextStyle(
                           color: Colors.grey[300],
-                          fontSize: AppSizes.sp14,
+                          fontSize: isCompact ? AppSizes.sp12 : AppSizes.sp14,
                           height: 1.4,
                         ),
-                        maxLines: 4,
+                        maxLines: isCompact ? 3 : 4,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),

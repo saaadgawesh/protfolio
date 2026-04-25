@@ -4,7 +4,7 @@ const List<WorkExperienceModel> workExperiences = [
   WorkExperienceModel(
     company: 'HumaVolve',
     employmentType: 'Part Time',
-    duration: '4 Months',
+    duration: '8 Months',
     status: 'Completed',
     projectTitle: 'Clinic Appointment Booking App',
     description:
@@ -16,7 +16,7 @@ const List<WorkExperienceModel> workExperiences = [
     ],
   ),
   WorkExperienceModel(
-    company: 'Elevated Tech',
+    company: 'Elevate Tech',
     employmentType: 'Part Time',
     duration: '4 Months - Present',
     status: 'Current',

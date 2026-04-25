@@ -16,6 +16,8 @@ class PortfolioStatCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isCompact = MediaQuery.sizeOf(context).width < 700;
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(AppSizes.r12),
@@ -35,16 +37,18 @@ class PortfolioStatCard extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: Colors.white,
-              fontSize: AppSizes.sp16,
+              fontSize: isCompact ? AppSizes.sp14 : AppSizes.sp16,
               fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(height: AppSizes.h4),
           Text(
             title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: PortfolioColors.grayLighter,
-              fontSize: AppSizes.sp11,
+              fontSize: isCompact ? AppSizes.sp10 : AppSizes.sp11,
             ),
           ),
         ],

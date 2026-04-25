@@ -18,20 +18,26 @@ class ProjectContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isCompact = MediaQuery.sizeOf(context).width < 700;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           project.title,
+          maxLines: isCompact ? 2 : 1,
+          overflow: TextOverflow.ellipsis,
           style: theme.textTheme.titleLarge?.copyWith(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: AppSizes.sp20,
+            fontSize: isCompact ? AppSizes.sp18 : AppSizes.sp20,
           ),
         ),
         SizedBox(height: AppSizes.h8),
         Text(
           project.shortDescription,
+          maxLines: isCompact ? 3 : null,
+          overflow: isCompact ? TextOverflow.ellipsis : null,
           style: theme.textTheme.bodyMedium?.copyWith(
             color: PortfolioColors.grayLighter,
             fontSize: AppSizes.sp14,
@@ -41,6 +47,8 @@ class ProjectContent extends StatelessWidget {
         SizedBox(height: AppSizes.h12),
         Text(
           project.longDescription,
+          maxLines: isCompact ? 5 : null,
+          overflow: isCompact ? TextOverflow.ellipsis : null,
           style: theme.textTheme.bodyMedium?.copyWith(
             color: PortfolioColors.grayLight,
             fontSize: AppSizes.sp13,

@@ -171,7 +171,7 @@ class ProjectStrings {
     'Flutter',
     'Firebase',
     'Cloud Firestore',
-    'Responsive UI',
+    'Clean UI',
     'Multi-screen Navigation',
   ];
   static const List<String> tamTamFeatures = [
@@ -184,7 +184,7 @@ class ProjectStrings {
   static const String ecommerceShortDescription =
       'Flutter e-commerce app with Firebase, DI, and reusable storefront widgets.';
   static const String ecommerceLongDescription =
-      'A shopping application built around authentication, categories, brands, dependency injection, API-ready services, reusable UI widgets, and responsive storefront flows using Flutter and Firebase.';
+      'A shopping application built around authentication, categories, brands, dependency injection, API-ready services, reusable UI widgets, and storefront flows using Flutter and Firebase.';
   static const List<String> ecommerceTechnologies = [
     'Flutter',
     'Firebase Auth',
@@ -193,7 +193,7 @@ class ProjectStrings {
     'Dio',
     'GetIt',
     'Injectable',
-    'ScreenUtil',
+    'Reusable Widgets',
   ];
   static const List<String> ecommerceFeatures = [
     'Authentication and commerce-oriented UI flows',
@@ -215,7 +215,7 @@ class ProjectStrings {
     'Dio',
     'GetIt',
     'Injectable',
-    'ScreenUtil',
+    'Layered Architecture',
   ];
   static const List<String> ecommerceFirebaseFeatures = [
     'Login, register, categories, products, and cart flow',
@@ -283,17 +283,17 @@ class ProjectStrings {
 
   static const String realEstateTitle = 'Real Estate App';
   static const String realEstateShortDescription =
-      'Responsive real estate showcase with banners, projects, recommendations, and side menu content.';
+      'Real estate showcase with banners, projects, recommendations, and side menu content.';
   static const String realEstateLongDescription =
-      'A responsive Flutter showcase project designed around home banners, project cards, recommendation widgets, contact sections, and a structured side menu experience for a real-estate style presentation.';
+      'A Flutter showcase project designed around home banners, project cards, recommendation widgets, contact sections, and a structured side menu experience for a real-estate style presentation.';
   static const List<String> realEstateTechnologies = [
     'Flutter',
-    'Responsive Layout',
+    'Structured Layout',
     'flutter_svg',
   ];
   static const List<String> realEstateFeatures = [
     'Banner, projects, and recommendation sections',
-    'Responsive layout handling across screen sizes',
+    'Structured presentation sections across the app',
     'Contact widgets and side menu presentation',
   ];
 
@@ -367,19 +367,19 @@ class ProjectStrings {
   static const String instaCloneShortDescription =
       'Instagram-inspired social app with authentication, feed UI, and reusable social components.';
   static const String instaCloneLongDescription =
-      'A Flutter social media clone project designed around familiar Instagram-style experiences including authentication flow, post-feed presentation, responsive screen composition, and reusable UI building blocks for social features.';
+      'A Flutter social media clone project designed around familiar Instagram-style experiences including authentication flow, post-feed presentation, screen composition, and reusable UI building blocks for social features.';
   static const List<String> instaCloneTechnologies = [
     'Flutter',
     'Firebase',
     'Firebase Auth',
     'Cloud Firestore',
     'flutter_bloc',
-    'Responsive UI',
+    'Reusable UI',
   ];
   static const List<String> instaCloneFeatures = [
     'Authentication and account flow for social app usage',
     'Feed-inspired UI with reusable social components',
-    'Responsive layouts and structured mobile navigation',
+    'Structured mobile navigation and reusable screen sections',
   ];
 
   static const String examAppTitle = 'Exam App';
@@ -393,41 +393,41 @@ class ProjectStrings {
     'flutter_bloc',
     'Firebase',
     'Cloud Firestore',
-    'Responsive UI',
+    'Reusable UI',
   ];
   static const List<String> examAppFeatures = [
     'Question and answer flow for exam sessions',
     'Structured results and progress-oriented user experience',
-    'Reusable UI with responsive educational screens',
+    'Reusable UI for educational screens',
   ];
 
   static const String portfolioTitle = 'Portfolio Website App';
   static const String portfolioShortDescription =
       'Personal Flutter portfolio presenting profile, resume, projects, and contact links.';
   static const String portfolioLongDescription =
-      'A personal branding project built with Flutter to showcase experience, resume details, featured GitHub projects, responsive layouts, social links, and downloadable CV access in one place.';
+      'A personal branding project built with Flutter to showcase experience, resume details, featured GitHub projects, social links, and downloadable CV access in one place.';
   static const List<String> portfolioTechnologies = [
     'Flutter',
-    'ScreenUtil',
-    'Responsive UI',
+    'Custom Design System',
+    'Reusable UI',
     'url_launcher',
     'Syncfusion PDF Viewer',
   ];
   static const List<String> portfolioFeatures = [
     'About, resume, portfolio, and contact tabs',
     'Real project cards with screenshots and links',
-    'Responsive layout support across screen sizes',
+    'Clean section-based portfolio structure',
   ];
 
   static const String aiChatTitle = 'AI Chat App';
   static const String aiChatShortDescription =
       'AI-powered chat experience with polished conversation UI and smart assistant flows.';
   static const String aiChatLongDescription =
-      'A Flutter chat application designed around modern AI conversation patterns, featuring a clean messaging experience, assistant-style interactions, responsive layouts, and screen flows that focus on usability and a production-ready presentation.';
+      'A Flutter chat application designed around modern AI conversation patterns, featuring a clean messaging experience, assistant-style interactions, and screen flows that focus on usability and a production-ready presentation.';
   static const List<String> aiChatTechnologies = [
     'Flutter',
     'Dart',
-    'Responsive UI',
+    'Clean UI',
     'Chat Interface',
     'Reusable Widgets',
   ];
@@ -449,11 +449,11 @@ class AppStrings {
   static const String profileName = 'Saad Gawesh';
   static const String profileRole = 'Flutter Developer';
   static const String profileEmailTitle = 'Email';
-  static const String profileEmailValue = 'saadgawesg608@gmail.com';
+  static const String profileEmailValue = 'saadgawesh608@gmail.com';
   static const String profilePhoneTitle = 'Phone';
-  static const String profilePhoneValue = '+20/1031214881';
+  static const String profilePhoneValue = '+20-1031214881';
 
-  static const String profileLocationTitle = 'Location';
+  static const String profileLocationTitle = 'Country';
   static const String profileLocationValue = 'Egypt';
 
   static const String aboutTitle = 'About Me';
@@ -538,7 +538,7 @@ class AppStrings {
   static const List<Map<String, dynamic>> resumeTechSections = [
     {
       'title': 'Core Flutter',
-      'items': [ 'Dart', 'Responsive UI', 'Adaptive Layouts'],
+      'items': ['Dart', 'Clean UI', 'Reusable Layouts'],
     },
     {
       'title': 'State Management',
